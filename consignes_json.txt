@@ -1,0 +1,23 @@
+1
+The configuration script MUST know the physical network architecture. Define which router is connected
+ to which router on which interface
+ 
+2
+A choice must be made in the approach followed to address the physical and loopback interfaces of the
+ routers.
+ • Human defined: The intent file will contain the IP addresses of the interfaces.
+ • Automated: The intent file will contain an IP range that will be used for the addressing of the
+ physical and loopback interfaces of a given AS. The script will allocate subnets from the specified
+ range. It is recommended to provide an IP range for the physical interfaces and another IP range
+ for the loopback interfaces.
+
+ 3 Protocols
+ The intent file MUST describe which Interior Gateway Protocol is used in an AS. The script will auto
+matically enable the specified IGP on the routers of the AS.
+ The intent file MUST describe to which BGP AS a given router belongs. The intent file MUST
+ capture the necessary information for the iBGP sessions and eBGP to be established.
+ 4 Policies
+4.1 BGP Policies
+ Specific routing policies are typically applied on BGP sessions based on the business relationship with the
+ neighboring AS. The intent file SHOULD capture such policies so that network automation can tweak
+ the policies applied on the eBGP sessions accordingly.
