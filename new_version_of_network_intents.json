@@ -1,91 +1,19 @@
 {
     "network_architecture": {
-      "routers": {
-        "R1": {
-          "interfaces": {
-            "GigabitEthernet0/0": "connected_to_R2_GigabitEthernet0/1",
-            "GigabitEthernet0/1": "connected_to_R3_GigabitEthernet0/0"
-          }
-        },
-        "R2": {
-          "interfaces": {
-            "GigabitEthernet0/1": "connected_to_R1_GigabitEthernet0/0",
-            "GigabitEthernet0/2": "connected_to_R3_GigabitEthernet0/1",
-            "GigabitEthernet0/3": "connected_to_R4_GigabitEthernet0/0"
-          }
-        },
-        "R3": {
-          "interfaces": {
-            "GigabitEthernet0/0": "connected_to_R1_GigabitEthernet0/1",
-            "GigabitEthernet0/1": "connected_to_R2_GigabitEthernet0/2"
-          }
-        },
-        "R4": {
-          "interfaces": {
-            "GigabitEthernet0/0": "connected_to_R2_GigabitEthernet0/3",
-            "GigabitEthernet0/1": "connected_to_R5_GigabitEthernet0/0",
-            "GigabitEthernet0/2": "connected_to_R6_GigabitEthernet0/0"
-          }
-        },
-        "R5": {
-          "interfaces": {
-            "GigabitEthernet0/0": "connected_to_R4_GigabitEthernet0/1",
-            "GigabitEthernet0/1": "connected_to_R6_GigabitEthernet0/1"
-          }
-        },
-        "R6": {
-          "interfaces": {
-            "GigabitEthernet0/0": "connected_to_R4_GigabitEthernet0/2",
-            "GigabitEthernet0/1": "connected_to_R5_GigabitEthernet0/1"
-          }
-        }
-      }
+      "liens_physiques": [
+        {"router": 4, "links": [6]},
+        {"router": 5, "links": [6]},
+        {"router": 6, "links": [4, 5, 8]},
+        {"router": 8, "links": [6, 10, 11]},
+        {"router": 10, "links": [8]},
+        {"router": 11, "links": [8]}
+      ]
     },
   
     "interfaces_and_addresses": {
-      "R1": {
-        "physical_interfaces": {
-          "GigabitEthernet0/0": "192.168.1.1/30",
-          "GigabitEthernet0/1": "192.168.2.1/30"
-        },
-        "loopback": "10.0.0.1/32"
-      },
-      "R2": {
-        "physical_interfaces": {
-          "GigabitEthernet0/1": "192.168.1.2/30",
-          "GigabitEthernet0/2": "192.168.3.1/30",
-          "GigabitEthernet0/3": "192.168.4.1/30"
-        },
-        "loopback": "10.0.0.2/32"
-      },
-      "R3": {
-        "physical_interfaces": {
-          "GigabitEthernet0/0": "192.168.2.2/30",
-          "GigabitEthernet0/1": "192.168.3.2/30"
-        },
-        "loopback": "10.0.0.3/32"
-      },
-      "R4": {
-        "physical_interfaces": {
-          "GigabitEthernet0/0": "192.168.4.2/30",
-          "GigabitEthernet0/1": "192.168.5.1/30",
-          "GigabitEthernet0/2": "192.168.6.1/30"
-        },
-        "loopback": "10.0.1.1/32"
-      },
-      "R5": {
-        "physical_interfaces": {
-          "GigabitEthernet0/0": "192.168.5.2/30",
-          "GigabitEthernet0/1": "192.168.7.1/30"
-        },
-        "loopback": "10.0.1.2/32"
-      },
-      "R6": {
-        "physical_interfaces": {
-          "GigabitEthernet0/0": "192.168.6.2/30",
-          "GigabitEthernet0/1": "192.168.7.2/30"
-        },
-        "loopback": "10.0.1.3/32"
+      "IP_ranges": {
+        "physical_interfaces": [2001,2002],
+        "loopback_interfaces": [2003,2003]
       }
     },
   
@@ -93,41 +21,30 @@
       "IGP": [
         {
           "type": "RIP",
-          "routers": ["R1", "R2", "R3"]
+          "routers": [4, 5, 6]
         },
         {
           "type": "OSPF",
           "area": "0.0.0.0",
-          "routers": ["R4", "R5", "R6"],
-          "metrics": {
-            "R4_to_R5": 10,
-            "R4_to_R6": 20,
-            "R5_to_R6": 15
-          }
+          "routers": [8, 10, 11],
+          "metrics": [
+            [8, 10, 99],
+            [8, 11, 98]
+          ] 
         }
       ],
       "BGP": {
         "AS_assignments": {
-          "R1": 111,
-          "R2": 111,
-          "R3": 111,
-          "R4": 112,
-          "R5": 112,
-          "R6": 112
+          "111": [4,5,6],
+          "112": [8,10,11]
         },
-        "sessions": {
-          "iBGP": [
-            {"source": "R1", "destination": "R2", "relationship": "peer"},
-            {"source": "R1", "destination": "R3", "relationship": "peer"},
-            {"source": "R2", "destination": "R3", "relationship": "peer"},
-            {"source": "R4", "destination": "R5", "relationship": "peer"},
-            {"source": "R4", "destination": "R6", "relationship": "peer"},
-            {"source": "R5", "destination": "R6", "relationship": "peer"}
-          ],
-          "eBGP": [
-            {"source": "R2", "destination": "R4", "relationship": "provider"}
-          ]
-        }
+        "sessions": [
+            [4, 5, "peer"],
+            [5, 6, "peer"],
+            [8, 10, "peer"],
+            [8, 11, "peer"],
+            [6, 8, "provider"]
+        ]
       }
     }
   }
