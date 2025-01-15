@@ -95,7 +95,7 @@ def generate_cfg_for_routers(data):
 # 主程序
 def main():
     # 读取 JSON 文件
-    input_filename = 'network_config.json'
+    input_filename = 'network_intents.json'
     json_data = read_json(input_filename)
     
     # 为每个路由器生成单独的配置文件

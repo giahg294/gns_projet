@@ -95,7 +95,7 @@ def generate_cfg_for_routers(data):
 # Fonction principale
 def main():
     # Lire les données à partir du fichier JSON
-    input_filename = 'network_config.json'
+    input_filename = 'network_intents.json'
     json_data = read_json(input_filename)
     
     # Générer les fichiers de configuration pour chaque routeur
