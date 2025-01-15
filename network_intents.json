@@ -1,0 +1,77 @@
+{
+    "network": {
+      "autonomous_systems": [
+        {
+          "as_number": ,
+          "routers": [
+            {
+              "hostname": "R1",
+              "loopback_ip": "10.0.0.1",
+              "interfaces": [
+                {
+                  "name": "GigabitEthernet0/0",
+                  "type": "physical"
+                },
+                {
+                  "name": "Loopback0",
+                  "type": "loopback"
+                }
+              ],
+              "bgp_peers": [
+                {
+                  "ip": "192.168.1.2",
+                  "as": 200
+                }
+              ]
+            },
+            {
+              "hostname": "R2",
+              "loopback_ip": "10.0.0.2",
+              "interfaces": [
+                {
+                  "name": "GigabitEthernet0/0",
+                  "type": "physical"
+                },
+                {
+                  "name": "Loopback0",
+                  "type": "loopback"
+                }
+              ],
+              "bgp_peers": [
+                {
+                  "ip": "192.168.1.1",
+                  "as": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "as_number": 200,
+          "routers": [
+            {
+              "hostname": "R3",
+              "loopback_ip": "10.0.0.3",
+              "interfaces": [
+                {
+                  "name": "GigabitEthernet0/0",
+                  "type": "physical"
+                },
+                {
+                  "name": "Loopback0",
+                  "type": "loopback"
+                }
+              ],
+              "bgp_peers": [
+                {
+                  "ip": "192.168.1.1",
+                  "as": 100
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
