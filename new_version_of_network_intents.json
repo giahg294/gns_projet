@@ -98,7 +98,12 @@
         {
           "type": "OSPF",
           "area": "0.0.0.0",
-          "routers": ["R4", "R5", "R6"]
+          "routers": ["R4", "R5", "R6"],
+          "metrics": {
+            "R4_to_R5": 10,
+            "R4_to_R6": 20,
+            "R5_to_R6": 15
+          }
         }
       ],
       "BGP": {
@@ -112,31 +117,16 @@
         },
         "sessions": {
           "iBGP": [
-            {"source": "R1", "destination": "R2"},
-            {"source": "R1", "destination": "R3"},
-            {"source": "R2", "destination": "R3"},
-            {"source": "R4", "destination": "R5"},
-            {"source": "R4", "destination": "R6"},
-            {"source": "R5", "destination": "R6"}
+            {"source": "R1", "destination": "R2", "relationship": "peer"},
+            {"source": "R1", "destination": "R3", "relationship": "peer"},
+            {"source": "R2", "destination": "R3", "relationship": "peer"},
+            {"source": "R4", "destination": "R5", "relationship": "peer"},
+            {"source": "R4", "destination": "R6", "relationship": "peer"},
+            {"source": "R5", "destination": "R6", "relationship": "peer"}
           ],
           "eBGP": [
-            {"source": "R2", "destination": "R4"}
+            {"source": "R2", "destination": "R4", "relationship": "provider"}
           ]
-        }
-      }
-    },
-  
-    "policies": {
-      "BGP_policies": {
-        "eBGP": {
-          "R4": {
-            "import_policy": "prefer_longer_prefixes",
-            "export_policy": "restrict_to_specific_prefixes"
-          },
-          "R2": {
-            "import_policy": "default",
-            "export_policy": "default"
-          }
         }
       }
     }

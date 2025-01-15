@@ -18,6 +18,23 @@ matically enable the specified IGP on the routers of the AS.
  capture the necessary information for the iBGP sessions and eBGP to be established.
  4 Policies
 4.1 BGP Policies
- Specific routing policies are typically applied on BGP sessions based on the business relationship with the
- neighboring AS. The intent file SHOULD capture such policies so that network automation can tweak
- the policies applied on the eBGP sessions accordingly.
+Peering
+Adapt your intent file so as to be able to describe whether a neigbhouring AS is a customer, a
+ provider, or a settlement-free peer.
+
+4.2
+OSPF can be engineered for better traffic distribution by setting link costs to other values than the
+ default capacity-based value. The intent file SHOULD allow for the definition of such metrics.
+
+
+6 routers:
+r1, r2 et r3: AS 111,RIP
+r4,r5 et r6: AS 112,OSPF
+
+r1--r2 ibgp
+r1--r3 ibgp
+r2--r3 ibgp
+r2--r4 eBGP
+r4--r5 iBGP
+r4--r6 iBGP
+r5--r6 iBGP
