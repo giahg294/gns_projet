@@ -5,8 +5,8 @@ The configuration script MUST know the physical network architecture. Define whi
 2
 A choice must be made in the approach followed to address the physical and loopback interfaces of the
  routers.
- • Human defined: The intent file will contain the IP addresses of the interfaces.
- • Automated: The intent file will contain an IP range that will be used for the addressing of the
+
+ • Automated:  The intent file will contain an IP range that will be used for the addressing of the
  physical and loopback interfaces of a given AS. The script will allocate subnets from the specified
  range. It is recommended to provide an IP range for the physical interfaces and another IP range
  for the loopback interfaces.
@@ -18,6 +18,26 @@ matically enable the specified IGP on the routers of the AS.
  capture the necessary information for the iBGP sessions and eBGP to be established.
  4 Policies
 4.1 BGP Policies
- Specific routing policies are typically applied on BGP sessions based on the business relationship with the
- neighboring AS. The intent file SHOULD capture such policies so that network automation can tweak
- the policies applied on the eBGP sessions accordingly.
+Peering
+Adapt your intent file so as to be able to describe whether a neigbhouring AS is a customer, a
+ provider, or a settlement-free peer.
+
+4.2
+OSPF can be engineered for better traffic distribution by setting link costs to other values than the
+ default capacity-based value. The intent file SHOULD allow for the definition of such metrics.
+
+ipv6
+6 routers:
+r4,r5,r6: AS 111,RIP
+r8,r10,r11: AS 112,OSPF
+
+ an IP range for the physical interfaces: 2001:~ 2002:
+  another IP range for the loopback interfaces: 2003:
+
+r4-r6 iBGP
+r5-r6 iBGP
+r6-r8 eBGP
+r8-r10 iBGP
+r8-r11 iBGP
+
+

@@ -1,77 +1,51 @@
 {
-    "network": {
-      "autonomous_systems": [
+    "network_architecture": {
+      "liens_physiques": [
+        {"router": 4, "links": [6]},
+        {"router": 5, "links": [6]},
+        {"router": 6, "links": [4, 5, 8]},
+        {"router": 8, "links": [6, 10, 11]},
+        {"router": 10, "links": [8]},
+        {"router": 11, "links": [8]}
+      ]
+    },
+  
+    "interfaces_and_addresses": {
+      "IP_ranges": {
+        "physical_interfaces": [2001,2002],
+        "loopback_interfaces": [2003,2003]
+      }
+    },
+  
+    "protocols": {
+      "IGP": [
         {
-          "as_number": ,
-          "routers": [
-            {
-              "hostname": "R1",
-              "loopback_ip": "10.0.0.1",
-              "interfaces": [
-                {
-                  "name": "GigabitEthernet0/0",
-                  "type": "physical"
-                },
-                {
-                  "name": "Loopback0",
-                  "type": "loopback"
-                }
-              ],
-              "bgp_peers": [
-                {
-                  "ip": "192.168.1.2",
-                  "as": 200
-                }
-              ]
-            },
-            {
-              "hostname": "R2",
-              "loopback_ip": "10.0.0.2",
-              "interfaces": [
-                {
-                  "name": "GigabitEthernet0/0",
-                  "type": "physical"
-                },
-                {
-                  "name": "Loopback0",
-                  "type": "loopback"
-                }
-              ],
-              "bgp_peers": [
-                {
-                  "ip": "192.168.1.1",
-                  "as": 100
-                }
-              ]
-            }
-          ]
+          "type": "RIP",
+          "routers": [4, 5, 6]
         },
         {
-          "as_number": 200,
-          "routers": [
-            {
-              "hostname": "R3",
-              "loopback_ip": "10.0.0.3",
-              "interfaces": [
-                {
-                  "name": "GigabitEthernet0/0",
-                  "type": "physical"
-                },
-                {
-                  "name": "Loopback0",
-                  "type": "loopback"
-                }
-              ],
-              "bgp_peers": [
-                {
-                  "ip": "192.168.1.1",
-                  "as": 100
-                }
-              ]
-            }
-          ]
+          "type": "OSPF",
+          "area": "0.0.0.0",
+          "routers": [8, 10, 11],
+          "metrics": [
+            [8, 10, 99],
+            [8, 11, 98]
+          ] 
         }
-      ]
+      ],
+      "BGP": {
+        "AS_assignments": {
+          "111": [4,5,6],
+          "112": [8,10,11]
+        },
+        "sessions": [
+            [4, 5, "peer"],
+            [5, 6, "peer"],
+            [8, 10, "peer"],
+            [8, 11, "peer"],
+            [6, 8, "provider"]
+        ]
+      }
     }
   }
   
