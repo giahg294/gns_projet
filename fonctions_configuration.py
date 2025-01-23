@@ -220,14 +220,24 @@ def config_end(protocol, router_id, router, connections_matrix_name):
 
     part = [
         "!\r"*3 + "!",
-        "control-plane",  # Configurer le plan de contrôle
+        "control-plane",
         "!\r!",
-        "line con 0",  # Configuration de la console
+        "line con 0",
         " exec-timeout 0 0",
         " privilege level 15",
         " logging synchronous",
         " stopbits 1",
-        "line aux 0",  # Configuration auxiliaire
+        "line aux 0",
         " exec-timeout 0 0",
         " privilege level 15",
-        "
+        " logging synchronous",
+        " stopbits 1",
+        "line vty 0 4",
+        " login",
+        "!\r!",
+        "end\r"
+    ]
+
+    config.extend(part)
+
+    return config
