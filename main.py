@@ -1,8 +1,9 @@
 # Reste a voir::::: 
 import json 
 import os 
-from allocate_addres import * 
-from configuration import * 
+import shutil
+from address_allocator import * 
+from fonctions_configuration import * 
 
 
 # 定义一个函数，用于将文件从源目录移动到目标目录，并覆盖目标目录中同名的文件
