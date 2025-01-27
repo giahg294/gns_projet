@@ -147,3 +147,14 @@ def generate_routers_dict(all_as):
             }
             routers_dict[router.name] = router_dict
     return routers_dict
+
+def generate_as_dict(all_as):
+    as_dico = {}
+    for as_obj in all_as:
+        as_dico[as_obj.number] = {}
+        router_liste = []
+        for router in as_obj.routers:
+            # Génère l'adresse loopback pour chaque routeur
+            router_liste.append(router.name)
+        as_dico[as_obj.number] = {"routers": router_liste, "protocol":as_obj.protocol}
+    return as_dico

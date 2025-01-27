@@ -1,0 +1,508 @@
+{
+    "name": "Mon Projet GNS3",
+    "version": "2.2.52",
+    "type": "topology",
+    "topology": {
+        "computes": [],
+        "drawings": [],
+        "links": [
+            {
+                "link_id": "link-1",
+                "nodes": [
+                    {
+                        "node_id": "node-1",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-2",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-2",
+                "nodes": [
+                    {
+                        "node_id": "node-2",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-3",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-3",
+                "nodes": [
+                    {
+                        "node_id": "node-3",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-4",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-4",
+                "nodes": [
+                    {
+                        "node_id": "node-4",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-5",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-5",
+                "nodes": [
+                    {
+                        "node_id": "node-5",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-6",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-6",
+                "nodes": [
+                    {
+                        "node_id": "node-6",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-7",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-7",
+                "nodes": [
+                    {
+                        "node_id": "node-8",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-9",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-8",
+                "nodes": [
+                    {
+                        "node_id": "node-9",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-10",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-9",
+                "nodes": [
+                    {
+                        "node_id": "node-10",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-11",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-10",
+                "nodes": [
+                    {
+                        "node_id": "node-11",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-12",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-11",
+                "nodes": [
+                    {
+                        "node_id": "node-12",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-13",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "link_id": "link-12",
+                "nodes": [
+                    {
+                        "node_id": "node-13",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "node-14",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            }
+        ],
+        "nodes": [
+            {
+                "compute_id": "local",
+                "name": "R1",
+                "node_id": "node-1",
+                "node_type": "dynamips",
+                "console": 5001,
+                "protocol": "RIP",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R1",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 0,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R2",
+                "node_id": "node-2",
+                "node_type": "dynamips",
+                "console": 5002,
+                "protocol": "RIP",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R2",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 150,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R3",
+                "node_id": "node-3",
+                "node_type": "dynamips",
+                "console": 5003,
+                "protocol": "RIP",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R3",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 300,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R4",
+                "node_id": "node-4",
+                "node_type": "dynamips",
+                "console": 5004,
+                "protocol": "RIP",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R4",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 450,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R5",
+                "node_id": "node-5",
+                "node_type": "dynamips",
+                "console": 5005,
+                "protocol": "RIP",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R5",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 600,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R6",
+                "node_id": "node-6",
+                "node_type": "dynamips",
+                "console": 5006,
+                "protocol": "RIP",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R6",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 750,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R7",
+                "node_id": "node-7",
+                "node_type": "dynamips",
+                "console": 5007,
+                "protocol": "RIP",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R7",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 900,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R8",
+                "node_id": "node-8",
+                "node_type": "dynamips",
+                "console": 5008,
+                "protocol": "OSPF",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R8",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 1050,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R9",
+                "node_id": "node-9",
+                "node_type": "dynamips",
+                "console": 5009,
+                "protocol": "OSPF",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R9",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 1200,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R10",
+                "node_id": "node-10",
+                "node_type": "dynamips",
+                "console": 5010,
+                "protocol": "OSPF",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R10",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 1350,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R11",
+                "node_id": "node-11",
+                "node_type": "dynamips",
+                "console": 5011,
+                "protocol": "OSPF",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R11",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 1500,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R12",
+                "node_id": "node-12",
+                "node_type": "dynamips",
+                "console": 5012,
+                "protocol": "OSPF",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R12",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 1650,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R13",
+                "node_id": "node-13",
+                "node_type": "dynamips",
+                "console": 5013,
+                "protocol": "OSPF",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R13",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 1800,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            },
+            {
+                "compute_id": "local",
+                "name": "R14",
+                "node_id": "node-14",
+                "node_type": "dynamips",
+                "console": 5014,
+                "protocol": "OSPF",
+                "properties": {
+                    "image": "c7200-advipservicesk9-mz.152-4.S5.image",
+                    "platform": "c7200",
+                    "ram": 512
+                },
+                "label": {
+                    "text": "R14",
+                    "style": "font-family: TypeWriter; font-size: 10.0; font-weight: bold;"
+                },
+                "x": 1950,
+                "y": 200,
+                "width": 66,
+                "height": 45
+            }
+        ]
+    },
+    "auto_open": false,
+    "auto_start": false,
+    "grid_size": 75,
+    "scene_height": 1000,
+    "scene_width": 2000,
+    "zoom": 100,
+    "show_grid": false,
+    "snap_to_grid": false,
+    "show_layers": false
+}

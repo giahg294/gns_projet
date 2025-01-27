@@ -8,10 +8,10 @@ from fonctions_config_gns3 import *
 
 # Définir une fonction pour déplacer un fichier du répertoire source vers le répertoire cible, en écrasant les fichiers portant le même nom dans le répertoire cible
 def move_and_overwrite(source_file, target_directory):
-    # target_file = os.path.join(target_directory, os.path.basename(source_file))  # Générer le chemin du fichier cible
+    target_file = os.path.join(target_directory, os.path.basename(source_file))  # Générer le chemin du fichier cible
     # shutil.move(source_file, target_file)  # Déplacer le fichier et écraser le fichier cible
-
-    shutil.move(source_file, target_directory)
+    if not target_file:
+        shutil.move(source_file, target_directory)
 
 def create_folder(name):
     # Vérifier si le dossier 'projet-files' existe déjà
@@ -24,11 +24,6 @@ def create_folder(name):
         print(f"Le dossier '{folder_name}' existe déjà.")
 
 if __name__ == "__main__":
-    
-    # Appeler la fonction pour créer le dossier
-    create_folder("resultat/projet-files")
-    # os.chdir("resultats")
-    # create_folder("dynamips")
 
     # Ouvrir et lire le fichier JSON, charger les données
     with open('14routers.json', 'r') as file:
@@ -38,6 +33,8 @@ if __name__ == "__main__":
     all_as = [AS(as_info['number'], as_info['IP_range'], as_info['loopback_range'], as_info['protocol'], as_info['routers']) 
             for as_info in data['AS']]
 
+    all_as_dict = generate_as_dict(all_as)
+            
     # Créer un dictionnaire as_mapping pour stocker le numéro AS auquel chaque routeur appartient
     as_mapping = {}
     for as_index in all_as:  # Parcourir toutes les instances AS
@@ -120,6 +117,7 @@ if __name__ == "__main__":
     for i in range(len(fichiers_config)):
         move_and_overwrite(fichiers_config[i], target_directory[i])
 
+    # print(all_as_dict)
     # Appeler la fonction pour créer le fichier .gns3
-    # create_gns3_project_file()
+    create_gns3_project_file(all_as_dict)
 
