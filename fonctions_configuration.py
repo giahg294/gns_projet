@@ -42,7 +42,7 @@ def config_loopback(ip_loopback, protocol):
     config.append(" ipv6 enable")  # Activer IPv6 sur l'interface
 
     if protocol == "RIP":
-        config.append(" ipv6 rip 2001 enable")  # Activer RIP pour IPv6
+        config.append(" ipv6 rip ng enable")  # Activer RIP pour IPv6
     if protocol == "OSPF":
         config.append(" ipv6 ospf 2002 area 0")  # Associer l'interface à une zone OSPF
 
@@ -86,7 +86,7 @@ def config_interface(interfaces, protocol, router, connections_matrix_name):
                 config.append(" ipv6 enable")  # Activer IPv6
 
                 if protocol == "RIP" and not ipv6_address.startswith("2001:192:170:"):
-                    config.append(" ipv6 rip 2001 enable")  # Activer RIP si applicable
+                    config.append(" ipv6 rip ng enable")  # Activer RIP si applicable
                 elif protocol == "OSPF":
                     config.append(" ipv6 ospf 2002 area 0")  # Associer à une zone OSPF
 
