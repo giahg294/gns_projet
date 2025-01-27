@@ -1,4 +1,4 @@
-from address_allocator.py import *
+from address_allocator import *
 import ipaddress
 
 # Configurer l'en-tête du fichier
