@@ -149,7 +149,7 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
 
     # Annoncer le sous-réseau des voisins
     liste = list(routers_dict.keys())
-    if router.name == liste[8] or router.name == liste[9] or router.name == liste[10] or router.name == liste[11]:
+    if router.name == liste[5] or router.name == liste[6] or router.name == liste[7] or router.name == liste[8]:
         networks = []
         for interface in router.interfaces:
             ip_addr = interface.get('ipv6_address', '')
