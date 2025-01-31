@@ -107,11 +107,11 @@ def generate_interface_addresses(name, interfaces, connections, connection_count
 
             # Détermine la plage d'adresses selon l'état
             if state == "border":
-                ip_range = "2001:192:170:0::/64"
+                ip_range = "2001:192:170::/64"
             elif state == "111":
-                ip_range = "2001:192:168:0::/64"
+                ip_range = "2001:192:168::/64"
             elif state == "112":
-                ip_range = "2001:192:169:0::/64"
+                ip_range = "2001:192:169::/64"
 
             connection = (connection, state)
             connection_index = connections.index(connection)
@@ -126,8 +126,12 @@ def generate_interface_addresses(name, interfaces, connections, connection_count
 
             # Attribue une adresse selon le rôle (routeur ou voisin)
             address_number = 1 if router_index < neighbor_index else 2
-            ipv6_address = f"{ip_range[:-6]}{subnet+1}::{address_number}/64"
-            interface['ipv6_address'] = ipv6_address 
+            if state == "112":
+                ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
+                interface['ipv6_address'] = ipv6_address 
+            else:    
+                ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
+                interface['ipv6_address'] = ipv6_address 
 
 # Génération de l'ID routeur (Router ID)
 def generate_router_id(name):

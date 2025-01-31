@@ -90,6 +90,10 @@ def config_interface(interfaces, protocol, router, connections_matrix_name):
                 elif protocol == "OSPF":
                     config.append(" ipv6 ospf 1 area 0")  # Associer à une zone OSPF
 
+        if protocol == "OSPF":
+            config.append("!")
+            config.append("router ospf 1")
+
         config.append("!")
 
     return config
@@ -147,18 +151,34 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
     config.append(" !")
     config.append(" address-family ipv6")  # Configurer la famille d'adresses IPv6
 
-    # Annoncer le sous-réseau des voisins
+    # Annoncer tous les sous-réseaux d'un AS
     liste = list(routers_dict.keys())
     if router.name == liste[5] or router.name == liste[6] or router.name == liste[7] or router.name == liste[8]:
         networks = []
-        for interface in router.interfaces:
-            ip_addr = interface.get('ipv6_address', '')
-            if ip_addr:
-                try:
-                    network = ipaddress.IPv6Network(ip_addr, strict=False)
-                    networks.append(network)
-                except ValueError:
-                    print(f"Invalid IPv6 addresse: {ip_addr}")
+        if current_as == "111":
+            for routeur in routers:
+                if routeur.name in ["R1","R2","R3","R4","R5"]:
+                    for interface in routeur.interfaces:
+                        ip_addr = interface.get('ipv6_address', '')
+                        if ip_addr:
+                            try:
+                                network = ipaddress.IPv6Network(ip_addr, strict=False)
+                                if network not in networks : 
+                                    networks.append(network)
+                            except ValueError:
+                                print(f"Invalid IPv6 addresse: {ip_addr}")
+        else:
+            for routeur in routers:
+                if routeur.name in ["R10","R11","R12","R13","R14"]:
+                    for interface in routeur.interfaces:
+                        ip_addr = interface.get('ipv6_address', '')
+                        if ip_addr:
+                            try:
+                                network = ipaddress.IPv6Network(ip_addr, strict=False)
+                                if network not in networks : 
+                                    networks.append(network)
+                            except ValueError:
+                                print(f"Invalid IPv6 addresse: {ip_addr}")
 
         # Trier les sous-réseaux
         networks.sort(key=lambda net: (net.network_address, net.prefixlen))
@@ -189,10 +209,10 @@ def config_end(protocol, router_id, router, connections_matrix_name):
 
     # Configurer le protocole
     if protocol == "RIP":
-        config.append("ipv6 router rip 2001")  # Configurer RIP
+        config.append("ipv6 router rip ng")  # Configurer RIP
         config.append(" redistribute connected")  # Redistribuer les routes connectées
     if protocol == "OSPF":
-        config.append("ipv6 router ospf 2002")  # Configurer OSPF
+        config.append("ipv6 router ospf 1")  # Configurer OSPF
         config.append(f" router-id {router_id}")  # Définir l'ID du routeur
 
     # Configurer l'interface passive pour OSPF et eBGP
