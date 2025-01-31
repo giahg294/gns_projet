@@ -44,7 +44,7 @@ def config_loopback(ip_loopback, protocol):
     if protocol == "RIP":
         config.append(" ipv6 rip ng enable")  # Activer RIP pour IPv6
     if protocol == "OSPF":
-        config.append(" ipv6 ospf 2002 area 0")  # Associer l'interface à une zone OSPF
+        config.append(" ipv6 ospf 1 area 0")  # Associer l'interface à une zone OSPF
 
     config.append("!")
     return config
@@ -57,11 +57,11 @@ def config_interface(interfaces, protocol, router, connections_matrix_name):
     for interface in interfaces:
         config.append(f"interface {interface['name']}")  # Nom de l'interface
 
-        if protocol == "OSPF":
-            if interface['cost'] != 0:
-                # Calculer la nouvelle bande passante en fonction du coût OSPF
-                new_bandwidth = round(100000 / interface['cost'])
-                config.append(f"bandwidth {new_bandwidth}")  # Définir la bande passante
+        # if protocol == "OSPF":
+        #     if interface['cost'] != 0:
+        #         # Calculer la nouvelle bande passante en fonction du coût OSPF
+        #         new_bandwidth = round(100000 / interface['cost'])
+        #         config.append(f"bandwidth {new_bandwidth}")  # Définir la bande passante
 
         config.append(" no ip address")  # Désactiver IPv4
 
@@ -88,7 +88,7 @@ def config_interface(interfaces, protocol, router, connections_matrix_name):
                 if protocol == "RIP" and not ipv6_address.startswith("2001:192:170:"):
                     config.append(" ipv6 rip ng enable")  # Activer RIP si applicable
                 elif protocol == "OSPF":
-                    config.append(" ipv6 ospf 2002 area 0")  # Associer à une zone OSPF
+                    config.append(" ipv6 ospf 1 area 0")  # Associer à une zone OSPF
 
         config.append("!")
 

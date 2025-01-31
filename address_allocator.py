@@ -87,7 +87,7 @@ def generate_connections_matrix(routers, AS):
 # Génération de l'adresse loopback pour un routeur
 def generate_loopback(name, loopback_range):
     router_number = int(name[1:])  # Récupère le numéro du routeur
-    return f"{loopback_range[:-4]}{router_number}::1/128"  # Formate l'adresse loopback
+    return f"{loopback_range[:-5]}{router_number}::1/128"  # Formate l'adresse loopback
 
 # Génération des adresses IPv6 pour les interfaces
 def generate_interface_addresses(name, interfaces, connections, connection_counts):
