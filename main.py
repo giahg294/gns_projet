@@ -48,7 +48,7 @@ if __name__ == "__main__":
     routers_info = generate_routers_dict(all_as)
 
     # Initialiser le compteur des types de connexions
-    connection_counts = {"111": 0, "112": 0, "border": 0}
+    connection_counts = {"111": 0, "112": 0, "113": 0, "border": 0}
     # Parcourir la matrice de connexion pour compter les types de connexions
     for conn in connections_matrix:
         connection_counts[conn[1]] += 1

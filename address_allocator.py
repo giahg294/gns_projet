@@ -109,8 +109,10 @@ def generate_interface_addresses(name, interfaces, connections, connection_count
             if state == "border":
                 ip_range = "2001:192:170::/64"
             elif state == "111":
-                ip_range = "2001:192:168::/64"
+                ip_range = "2001:192:167::/64"
             elif state == "112":
+                ip_range = "2001:192:168::/64"
+            else:
                 ip_range = "2001:192:169::/64"
 
             connection = (connection, state)
@@ -126,7 +128,10 @@ def generate_interface_addresses(name, interfaces, connections, connection_count
 
             # Attribue une adresse selon le rôle (routeur ou voisin)
             address_number = 1 if router_index < neighbor_index else 2
-            if state == "112":
+            if state == "111":
+                ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
+                interface['ipv6_address'] = ipv6_address 
+            elif state == "112":
                 ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
                 interface['ipv6_address'] = ipv6_address 
             else:    

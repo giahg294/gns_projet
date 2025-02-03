@@ -153,11 +153,23 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
 
     # Annoncer tous les sous-réseaux d'un AS
     liste = list(routers_dict.keys())
-    if router.name == liste[5] or router.name == liste[6] or router.name == liste[7] or router.name == liste[8]:
+    if router.name == liste[4] or router.name == liste[5] or router.name == liste[8] or router.name == liste[9]:
         networks = []
         if current_as == "111":
             for routeur in routers:
-                if routeur.name in ["R1","R2","R3","R4","R5"]:
+                if routeur.name in ["R1","R2","R3","R4"]:
+                    for interface in routeur.interfaces:
+                        ip_addr = interface.get('ipv6_address', '')
+                        if ip_addr:
+                            try:
+                                network = ipaddress.IPv6Network(ip_addr, strict=False)
+                                if network not in networks : 
+                                    networks.append(network)
+                            except ValueError:
+                                print(f"Invalid IPv6 addresse: {ip_addr}")
+        elif current_as == "112":
+            for routeur in routers:
+                if routeur.name in ["R7","R8"]:
                     for interface in routeur.interfaces:
                         ip_addr = interface.get('ipv6_address', '')
                         if ip_addr:
@@ -169,7 +181,7 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
                                 print(f"Invalid IPv6 addresse: {ip_addr}")
         else:
             for routeur in routers:
-                if routeur.name in ["R10","R11","R12","R13","R14"]:
+                if routeur.name in ["R11","R12","R13","R14"]:
                     for interface in routeur.interfaces:
                         ip_addr = interface.get('ipv6_address', '')
                         if ip_addr:
