@@ -1,0 +1,48 @@
+Jan 07 14:37:05.317 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 07 14:37:05.324 HYPERVISOR: Started on IP = localhost, TCP port = 49199.
+Jan 07 14:37:05.826 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 07 14:37:05.826 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips 
+Jan 07 14:37:05.826 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips
+Jan 07 14:37:05.826 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\067293fc-0b8e-4aa3-832a-d763a508dff0 
+Jan 07 14:37:05.826 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\067293fc-0b8e-4aa3-832a-d763a508dff0
+Jan 07 14:37:05.826 HYPERVISOR: exec_cmd: vm create R5 5 c7200 
+Jan 07 14:37:05.826 VM: VM R5 created.
+Jan 07 14:37:05.826 HYPERVISOR: exec_cmd: vm set_con_tcp_port R5 5004 
+Jan 07 14:37:05.826 HYPERVISOR: exec_cmd: c7200 get_mac_addr R5 
+Jan 07 14:37:05.826 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm slot_add_binding R5 0 0 C7200-IO-FE 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm set_ios R5 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm set_exec_area R5 64 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm set_ram R5 512 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm set_nvram R5 512 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm set_disk0 R5 0 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm slot_add_binding R5 1 0 PA-GE 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm slot_add_binding R5 2 0 PA-GE 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm slot_add_binding R5 3 0 PA-GE 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:37:05.842 HYPERVISOR: exec_cmd: vm slot_add_binding R5 4 0 PA-GE 
+Jan 07 14:37:05.890 HYPERVISOR: exec_cmd: vm set_ios R5 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:37:15.036 HYPERVISOR: exec_cmd: vm set_ios R5 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:38:51.209 HYPERVISOR: exec_cmd: vm set_ios R5 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:39:48.247 HYPERVISOR: exec_cmd: vm set_ios R5 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:44:48.751 HYPERVISOR: exec_cmd: nio create_udp udp-815a786a-b007-46fd-b790-1035f979d3cf 10022 127.0.0.1 10023 
+Jan 07 14:44:49.040 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 1 0 udp-815a786a-b007-46fd-b790-1035f979d3cf 
+Jan 07 14:44:49.040 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:45:18.578 HYPERVISOR: exec_cmd: nio create_udp udp-6704efed-d6c3-4ccc-b8ff-a29d0d79e7f4 10034 127.0.0.1 10035 
+Jan 07 14:45:18.585 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 3 0 udp-6704efed-d6c3-4ccc-b8ff-a29d0d79e7f4 
+Jan 07 14:45:18.585 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:45:34.175 HYPERVISOR: exec_cmd: nio create_udp udp-bbaca5d4-c117-411b-85b8-f92c7be8fe2c 10044 127.0.0.1 10045 
+Jan 07 14:45:34.191 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 2 0 udp-bbaca5d4-c117-411b-85b8-f92c7be8fe2c 
+Jan 07 14:45:34.191 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:45:54.260 HYPERVISOR: exec_cmd: nio create_udp udp-fff60bc8-d76b-45a0-9d54-8d3392f76bae 10056 127.0.0.1 10057 
+Jan 07 14:45:54.277 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 4 0 udp-fff60bc8-d76b-45a0-9d54-8d3392f76bae 
+Jan 07 14:45:54.277 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:51:35.848 HYPERVISOR: exec_cmd: vm set_ghost_status R5 2 
+Jan 07 14:51:35.864 HYPERVISOR: exec_cmd: vm set_ghost_file R5 C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 07 14:51:35.864 HYPERVISOR: exec_cmd: vm get_status R5 
+Jan 07 14:51:35.879 HYPERVISOR: exec_cmd: vm set_config R5 configs\i5_startup-config.cfg 
+Jan 07 14:51:35.879 HYPERVISOR: exec_cmd: vm start R5 
+Jan 07 14:52:07.074 HYPERVISOR: exec_cmd: vm extract_config R5 

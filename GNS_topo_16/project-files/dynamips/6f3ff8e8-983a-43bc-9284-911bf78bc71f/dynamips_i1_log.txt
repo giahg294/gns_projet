@@ -1,0 +1,39 @@
+Jan 30 00:56:16.272 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 00:56:16.273 HYPERVISOR: Started on IP = localhost, TCP port = 51567.
+Jan 30 00:56:16.525 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 00:56:16.525 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips 
+Jan 30 00:56:16.534 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips
+Jan 30 00:56:16.534 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips\68ad9717-3e6a-4c90-91d7-c30acd723d82 
+Jan 30 00:56:16.534 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips\68ad9717-3e6a-4c90-91d7-c30acd723d82
+Jan 30 00:56:16.534 HYPERVISOR: exec_cmd: vm create R4 4 c7200 
+Jan 30 00:56:16.535 VM: VM R4 created.
+Jan 30 00:56:16.536 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5000 
+Jan 30 00:56:16.536 HYPERVISOR: exec_cmd: c7200 get_mac_addr R4 
+Jan 30 00:56:16.536 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 30 00:56:16.536 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-FE 
+Jan 30 00:56:16.537 HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+Jan 30 00:56:16.537 HYPERVISOR: exec_cmd: vm set_exec_area R4 64 
+Jan 30 00:56:16.538 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 30 00:56:16.538 HYPERVISOR: exec_cmd: c7200 set_mac_addr R4 ca04.2654.0000 
+Jan 30 00:56:16.538 HYPERVISOR: exec_cmd: vm set_nvram R4 512 
+Jan 30 00:56:16.539 HYPERVISOR: exec_cmd: vm set_ram R4 512 
+Jan 30 00:56:16.539 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 30 00:56:16.539 HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 PA-GE 
+Jan 30 00:56:16.539 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 30 00:56:16.540 HYPERVISOR: exec_cmd: vm slot_add_binding R4 2 0 PA-GE 
+Jan 30 00:56:16.540 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 30 00:56:16.540 HYPERVISOR: exec_cmd: vm slot_add_binding R4 3 0 PA-GE 
+Jan 30 00:56:16.540 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 30 00:56:16.540 HYPERVISOR: exec_cmd: vm slot_add_binding R4 4 0 PA-GE 
+Jan 30 00:57:12.124 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 30 00:57:12.662 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 30 00:57:12.958 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 30 01:05:50.862 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 30 01:05:50.863 HYPERVISOR: exec_cmd: vm extract_config R4 
+Jan 30 01:05:50.895 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 30 01:05:50.898 HYPERVISOR: exec_cmd: vm extract_config R4 
+Jan 30 01:05:50.900 HYPERVISOR: exec_cmd: vm delete R4 
+Jan 30 01:05:50.900 VM: VM R4 destroyed.
+Jan 30 01:05:50.920 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 30 01:05:51.339 HYPERVISOR: Stopped.
+Jan 30 01:05:51.339 GENERAL: reset done.

@@ -98,6 +98,81 @@ def config_interface(interfaces, protocol, router, connections_matrix_name):
 
     return config
 
+def config_network(current_as,routers):
+    networks = []
+    if current_as == "101":
+        for routeur in routers:
+            if routeur.name == "R1":
+                for interface in routeur.interfaces:
+                    ip_addr = interface.get('ipv6_address', '')
+                    if ip_addr:
+                        try:
+                            network = ipaddress.IPv6Network(ip_addr, strict=False)
+                            if network not in networks : 
+                                networks.append(network)
+                        except ValueError:
+                            print(f"Invalid IPv6 addresse: {ip_addr}")
+    elif current_as == "102":
+        for routeur in routers:
+            if routeur.name == "R16":
+                for interface in routeur.interfaces:
+                    ip_addr = interface.get('ipv6_address', '')
+                    if ip_addr:
+                        try:
+                            network = ipaddress.IPv6Network(ip_addr, strict=False)
+                            if network not in networks : 
+                                networks.append(network)
+                        except ValueError:
+                            print(f"Invalid IPv6 addresse: {ip_addr}")
+    elif current_as == "111":
+        for routeur in routers:
+            if routeur.name in ["R3","R4"]:
+                for interface in routeur.interfaces:
+                    ip_addr = interface.get('ipv6_address', '')
+                    if ip_addr:
+                        try:
+                            network = ipaddress.IPv6Network(ip_addr, strict=False)
+                            if network not in networks : 
+                                networks.append(network)
+                        except ValueError:
+                            print(f"Invalid IPv6 addresse: {ip_addr}")
+    elif current_as == "112":
+        for routeur in routers:
+            if routeur.name in ["R11","R12"]:
+                for interface in routeur.interfaces:
+                    ip_addr = interface.get('ipv6_address', '')
+                    if ip_addr:
+                        try:
+                            network = ipaddress.IPv6Network(ip_addr, strict=False)
+                            if network not in networks : 
+                                networks.append(network)
+                        except ValueError:
+                            print(f"Invalid IPv6 addresse: {ip_addr}")
+    elif current_as == "122":
+        for routeur in routers:
+            if routeur.name =="R14":
+                for interface in routeur.interfaces:
+                    ip_addr = interface.get('ipv6_address', '')
+                    if ip_addr:
+                        try:
+                            network = ipaddress.IPv6Network(ip_addr, strict=False)
+                            if network not in networks : 
+                                networks.append(network)
+                        except ValueError:
+                            print(f"Invalid IPv6 addresse: {ip_addr}")
+    else:
+        for routeur in routers:
+            for interface in routeur.interfaces:
+                ip_addr = interface.get('ipv6_address', '')
+                if ip_addr:
+                    try:
+                        network = ipaddress.IPv6Network(ip_addr, strict=False)
+                        if network not in networks : 
+                            networks.append(network)
+                    except ValueError:
+                        print(f"Invalid IPv6 addresse: {ip_addr}")
+    return networks
+
 
 # Configure bgp neighbor
 def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict):
@@ -153,50 +228,14 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
 
     # Annoncer tous les sous-réseaux d'un AS
     liste = list(routers_dict.keys())
-    if router.name == liste[4] or router.name == liste[5] or router.name == liste[8] or router.name == liste[9]:
-        networks = []
-        if current_as == "111":
-            for routeur in routers:
-                if routeur.name in ["R1","R2","R3","R4"]:
-                    for interface in routeur.interfaces:
-                        ip_addr = interface.get('ipv6_address', '')
-                        if ip_addr:
-                            try:
-                                network = ipaddress.IPv6Network(ip_addr, strict=False)
-                                if network not in networks : 
-                                    networks.append(network)
-                            except ValueError:
-                                print(f"Invalid IPv6 addresse: {ip_addr}")
-        elif current_as == "112":
-            for routeur in routers:
-                if routeur.name in ["R7","R8"]:
-                    for interface in routeur.interfaces:
-                        ip_addr = interface.get('ipv6_address', '')
-                        if ip_addr:
-                            try:
-                                network = ipaddress.IPv6Network(ip_addr, strict=False)
-                                if network not in networks : 
-                                    networks.append(network)
-                            except ValueError:
-                                print(f"Invalid IPv6 addresse: {ip_addr}")
-        else:
-            for routeur in routers:
-                if routeur.name in ["R11","R12","R13","R14"]:
-                    for interface in routeur.interfaces:
-                        ip_addr = interface.get('ipv6_address', '')
-                        if ip_addr:
-                            try:
-                                network = ipaddress.IPv6Network(ip_addr, strict=False)
-                                if network not in networks : 
-                                    networks.append(network)
-                            except ValueError:
-                                print(f"Invalid IPv6 addresse: {ip_addr}")
+    if router.name == liste[1] or liste[4] or liste[5] or liste[6] or liste[7] or liste[8] or liste[9] or liste[11] or liste[12] or liste[8] or liste[14]:
+        networks = config_network(current_as, routers)  
 
         # Trier les sous-réseaux
-        networks.sort(key=lambda net: (net.network_address, net.prefixlen))
+    networks.sort(key=lambda net: (net.network_address, net.prefixlen))
 
-        for network in networks:
-            config.append(f"  network {str(network)}")  # Ajouter les sous-réseaux à la configuration
+    for network in networks:
+        config.append(f"  network {str(network)}")  # Ajouter les sous-réseaux à la configuration
 
     # Activer les voisins IPv6
     for ip_neighbor in neighbor_liste:

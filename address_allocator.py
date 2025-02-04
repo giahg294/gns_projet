@@ -109,34 +109,36 @@ def generate_interface_addresses(name, interfaces, connections, connection_count
             if state == "border":
                 ip_range = "2001:192:170::/64"
             elif state == "111":
-                ip_range = "2001:192:167::/64"
+                ip_range = "2001:192:111::/64"
             elif state == "112":
-                ip_range = "2001:192:168::/64"
+                ip_range = "2001:192:112::/64"
+            elif state == "113":
+                ip_range = "2001:192:113::/64"
+            elif state == "101":
+                ip_range = "2001:192:101::/64"
+            elif state == "102":
+                ip_range = "2001:192:102::/64"
             else:
-                ip_range = "2001:192:169::/64"
+                ip_range = "2001:192:122::/64"
 
             connection = (connection, state)
             connection_index = connections.index(connection)
 
             # Calcule le sous-réseau selon l'état
-            if connection_index < connection_counts["111"]:
+            if connection_index < connection_counts["113"]:
                 subnet = connection_index
-            elif connection_counts["111"] <= connection_index < connection_counts["111"] + connection_counts["border"]:
-                subnet = connection_index - connection_counts["111"]
+            elif connection_counts["113"] <= connection_index < connection_counts["113"] + connection_counts["border"]:
+                subnet = connection_index - connection_counts["113"]
             else:
-                subnet = connection_index - connection_counts["111"] - connection_counts["border"]
+                subnet = connection_index - connection_counts["border"] - connection_counts["101"]
 
+       
             # Attribue une adresse selon le rôle (routeur ou voisin)
             address_number = 1 if router_index < neighbor_index else 2
-            if state == "111":
-                ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
-                interface['ipv6_address'] = ipv6_address 
-            elif state == "112":
-                ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
-                interface['ipv6_address'] = ipv6_address 
-            else:    
-                ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
-                interface['ipv6_address'] = ipv6_address 
+            
+            ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
+            interface['ipv6_address'] = ipv6_address 
+            
 
 # Génération de l'ID routeur (Router ID)
 def generate_router_id(name):

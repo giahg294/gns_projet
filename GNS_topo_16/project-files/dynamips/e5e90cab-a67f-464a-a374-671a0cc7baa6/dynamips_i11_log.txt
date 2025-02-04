@@ -1,0 +1,47 @@
+Jan 07 14:39:07.011 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 07 14:39:07.011 HYPERVISOR: Started on IP = localhost, TCP port = 49867.
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips 
+Jan 07 14:39:07.514 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\348dfc8b-6deb-44fc-a010-4bce87d98f87 
+Jan 07 14:39:07.514 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\348dfc8b-6deb-44fc-a010-4bce87d98f87
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: vm create R11 11 c7200 
+Jan 07 14:39:07.514 VM: VM R11 created.
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: vm set_con_tcp_port R11 5010 
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: c7200 get_mac_addr R11 
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:39:07.514 HYPERVISOR: exec_cmd: vm slot_add_binding R11 0 0 C7200-IO-FE 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm set_exec_area R11 64 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm set_ram R11 512 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm set_nvram R11 512 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm set_disk0 R11 0 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm slot_add_binding R11 1 0 PA-GE 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm slot_add_binding R11 2 0 PA-GE 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm slot_add_binding R11 3 0 PA-GE 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:39:07.530 HYPERVISOR: exec_cmd: vm slot_add_binding R11 4 0 PA-GE 
+Jan 07 14:39:07.576 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:39:19.869 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:40:01.467 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:48:13.075 HYPERVISOR: exec_cmd: nio create_udp udp-8a361264-71d0-4df9-acd6-f5030552975e 10082 127.0.0.1 10083 
+Jan 07 14:48:13.398 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 1 0 udp-8a361264-71d0-4df9-acd6-f5030552975e 
+Jan 07 14:48:13.398 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:48:27.331 HYPERVISOR: exec_cmd: nio create_udp udp-f68bb1d4-8939-408c-ab39-bbba6a12979a 10092 127.0.0.1 10093 
+Jan 07 14:48:27.346 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 2 0 udp-f68bb1d4-8939-408c-ab39-bbba6a12979a 
+Jan 07 14:48:27.346 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:48:33.256 HYPERVISOR: exec_cmd: nio create_udp udp-9c3301cd-19a3-4f28-a0e4-6c84ab6ba7e8 10100 127.0.0.1 10101 
+Jan 07 14:48:33.256 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 3 0 udp-9c3301cd-19a3-4f28-a0e4-6c84ab6ba7e8 
+Jan 07 14:48:33.263 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:48:45.244 HYPERVISOR: exec_cmd: nio create_udp udp-e8d458c2-2ea1-47e8-8408-1be751370b15 10110 127.0.0.1 10111 
+Jan 07 14:48:45.260 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 4 0 udp-e8d458c2-2ea1-47e8-8408-1be751370b15 
+Jan 07 14:48:45.260 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:51:36.618 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
+Jan 07 14:51:36.618 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 07 14:51:36.618 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 07 14:51:36.649 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg 
+Jan 07 14:51:36.649 HYPERVISOR: exec_cmd: vm start R11 
+Jan 07 14:52:07.080 HYPERVISOR: exec_cmd: vm extract_config R11 

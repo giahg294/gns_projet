@@ -1,8 +1,8 @@
 {
     "AS": [
         {
-            "number": "111",
-            "IP_range": "2001:192:167:0::/64",
+            "number": "101",
+            "IP_range": "2001:192:101::/64",
             "loopback_range": "2001:DB8::/128",
             "protocol": "RIP",
             "routers": [
@@ -12,13 +12,13 @@
                     "interfaces": [
                         {
                             "name": "FastEthernet0/0",
-                            "neighbor": "R2",
-                            "neighbor_interface": "FastEthernet0/0"
+                            "neighbor": "None",
+                            "neighbor_interface": "None"
                         },
                         {
                             "name": "GigabitEthernet1/0",
-                            "neighbor": "None",
-                            "neighbor_interface": "None"
+                            "neighbor": "R2",
+                            "neighbor_interface": "GigabitEthernet1/0"
                         },
                         {
                             "name": "GigabitEthernet2/0",
@@ -34,16 +34,16 @@
                 },
                 {
                     "name": "R2",
-                    "type": "iBGP",
+                    "type": "eBGP",
                     "interfaces": [
                         {
                             "name": "FastEthernet0/0",
-                            "neighbor": "R1",
+                            "neighbor": "R7",
                             "neighbor_interface": "FastEthernet0/0"
                         },
                         {
                             "name": "GigabitEthernet1/0",
-                            "neighbor": "R3",
+                            "neighbor": "R1",
                             "neighbor_interface": "GigabitEthernet1/0"
                         },
                         {
@@ -57,7 +57,14 @@
                             "neighbor_interface": "None"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {   "number": "111",
+            "IP_range": "2001:192:111::/64",
+            "loopback_range": "2001:DB8::/128",
+            "protocol": "RIP",
+            "routers": [
                 {
                     "name": "R3",
                     "type": "iBGP",
@@ -69,8 +76,8 @@
                         },
                         {
                             "name": "GigabitEthernet1/0",
-                            "neighbor": "R2",
-                            "neighbor_interface": "GigabitEthernet1/0"
+                            "neighbor": "None",
+                            "neighbor_interface": "None"
                         },
                         {
                             "name": "GigabitEthernet2/0",
@@ -139,12 +146,11 @@
             ]
         },
         {
-                "number": "112",
-                "IP_range": "2001:192:168:0::/64",
-                "loopback_range": "2001:DB8::/128",
-                "protocol": "RIP",
-                "routers": [
-            
+            "number": "113",
+            "IP_range": "2001:192:113::/64",
+            "loopback_range": "2001:DB8::/128",
+            "protocol": "RIP",
+            "routers": [
                 {
                     "name": "R6",
                     "type": "eBGP",
@@ -161,8 +167,8 @@
                         },
                         {
                             "name": "GigabitEthernet2/0",
-                            "neighbor": "None",
-                            "neighbor_interface": "None"
+                            "neighbor": "R9",
+                            "neighbor_interface": "GigabitEthernet2/0"
                         },
                         {
                             "name": "GigabitEthernet3/0",
@@ -173,11 +179,11 @@
                 },
                 {
                     "name": "R7",
-                    "type": "iBGP",
+                    "type": "eBGP",
                     "interfaces": [
                         {
                             "name": "FastEthernet0/0",
-                            "neighbor": "R8",
+                            "neighbor": "R2",
                             "neighbor_interface": "FastEthernet0/0"
                         },
                         {
@@ -187,8 +193,8 @@
                         },
                         {
                             "name": "GigabitEthernet2/0",
-                            "neighbor": "None",
-                            "neighbor_interface": "None"
+                            "neighbor": "R8",
+                            "neighbor_interface": "GigabitEthernet2/0"
                         },
                         {
                             "name": "GigabitEthernet3/0",
@@ -199,11 +205,11 @@
                 },
                 {
                     "name": "R8",
-                    "type": "iBGP",
+                    "type": "eBGP",
                     "interfaces": [
                         {
                             "name": "FastEthernet0/0",
-                            "neighbor": "R7",
+                            "neighbor": "R15",
                             "neighbor_interface": "FastEthernet0/0"
                         },
                         {
@@ -213,7 +219,7 @@
                         },
                         {
                             "name": "GigabitEthernet2/0",
-                            "neighbor": "R11",
+                            "neighbor": "R7",
                             "neighbor_interface": "GigabitEthernet2/0"
                         },
                         {
@@ -239,7 +245,7 @@
                         },
                         {
                             "name": "GigabitEthernet2/0",
-                            "neighbor": "None",
+                            "neighbor": "R6",
                             "neighbor_interface": "GigabitEthernet2/0"
                         },
                         {
@@ -252,8 +258,8 @@
             ]
         },
         {
-            "number": "113",
-            "IP_range": "2001:192:169:0::/64",
+            "number": "112",
+            "IP_range": "2001:192:112::/64",
             "loopback_range": "2001:DB8::/128",
             "protocol": "OSPF",
             "routers": [
@@ -263,21 +269,25 @@
                     "interfaces": [
                         {
                             "name": "FastEthernet0/0",
+                            "cost": 1,
                             "neighbor": "R9",
                             "neighbor_interface": "FastEthernet0/0"
                         },
                         {
                             "name": "GigabitEthernet1/0",
+                            "cost": 1,
                             "neighbor": "R11",
                             "neighbor_interface": "GigabitEthernet1/0"
                         },
                         {
                             "name": "GigabitEthernet2/0",
+                            "cost": 0,
                             "neighbor": "None",
                             "neighbor_interface": "None"
                         },
                         {
                             "name": "GigabitEthernet3/0",
+                            "cost": 0,
                             "neighbor": "None",
                             "neighbor_interface": "None"
                         }
@@ -311,7 +321,7 @@
                 },
                 {
                     "name": "R12",
-                    "type": "iBGP",
+                    "type": "eBGP",
                     "interfaces": [
                         {
                             "name": "FastEthernet0/0",
@@ -334,32 +344,36 @@
                             "neighbor_interface": "None"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "number": "122",
+            "IP_range": "2001:192:122::/64",
+            "loopback_range": "2001:DB8::/128",
+            "protocol": "RIP",
+            "routers": [
                 {
                     "name": "R13",
-                    "type": "iBGP",
+                    "type": "eBGP",
                     "interfaces": [
                         {
                             "name": "FastEthernet0/0",
-                            "cost": 3,
                             "neighbor": "R14",
                             "neighbor_interface": "FastEthernet0/0"
                         },
                         {
                             "name": "GigabitEthernet1/0",
-                            "cost": 1,
                             "neighbor": "R12",
                             "neighbor_interface": "GigabitEthernet1/0"
                         },
                         {
                             "name": "GigabitEthernet2/0",
-                            "cost": 5,
                             "neighbor": "None",
                             "neighbor_interface": "None"
                         },
                         {
                             "name": "GigabitEthernet3/0",
-                            "cost": 0,
                             "neighbor": "None",
                             "neighbor_interface": "None"
                         }
@@ -378,6 +392,66 @@
                             "name": "GigabitEthernet1/0",
                             "neighbor": "None",
                             "neighbor_interface": "None"
+                        },
+                        {
+                            "name": "GigabitEthernet2/0",
+                            "neighbor": "None",
+                            "neighbor_interface": "None"
+                        },
+                        {
+                            "name": "GigabitEthernet3/0",
+                            "neighbor": "None",
+                            "neighbor_interface": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "number": "102",
+            "IP_range": "2001:192:102::/64",
+            "loopback_range": "2001:DB8::/128",
+            "protocol": "RIP",
+            "routers": [
+                {
+                    "name": "R15",
+                    "type": "eBGP",
+                    "interfaces": [
+                        {
+                            "name": "FastEthernet0/0",
+                            "neighbor": "R8",
+                            "neighbor_interface": "FastEthernet0/0"
+                        },
+                        {
+                            "name": "GigabitEthernet1/0",
+                            "neighbor": "R16",
+                            "neighbor_interface": "GigabitEthernet1/0"
+                        },
+                        {
+                            "name": "GigabitEthernet2/0",
+                            "neighbor": "None",
+                            "neighbor_interface": "None"
+                        },
+                        {
+                            "name": "GigabitEthernet3/0",
+                            "neighbor": "None",
+                            "neighbor_interface": "None"
+                        }
+                    ]
+                },
+                {
+                    "name": "R16",
+                    "type": "iBGP",
+                    "interfaces": [
+                        {
+                            "name": "FastEthernet0/0",
+                            "neighbor": "None",
+                            "neighbor_interface": "None"
+                        },
+                        {
+                            "name": "GigabitEthernet1/0",
+                            "neighbor": "R15",
+                            "neighbor_interface": "GigabitEthernet1/0"
                         },
                         {
                             "name": "GigabitEthernet2/0",

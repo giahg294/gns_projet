@@ -1,0 +1,45 @@
+Jan 07 14:37:17.968 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 07 14:37:17.968 HYPERVISOR: Started on IP = localhost, TCP port = 49213.
+Jan 07 14:37:18.475 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 07 14:37:18.475 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips 
+Jan 07 14:37:18.475 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips
+Jan 07 14:37:18.475 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\5e86831e-cfdb-4252-a5b7-1662953bda20 
+Jan 07 14:37:18.483 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\5e86831e-cfdb-4252-a5b7-1662953bda20
+Jan 07 14:37:18.483 HYPERVISOR: exec_cmd: vm create R6 6 c7200 
+Jan 07 14:37:18.490 VM: VM R6 created.
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm set_con_tcp_port R6 5005 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: c7200 get_mac_addr R6 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm slot_add_binding R6 0 0 C7200-IO-FE 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm set_ios R6 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm set_exec_area R6 64 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm set_ram R6 512 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm set_nvram R6 512 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm set_disk0 R6 0 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm slot_add_binding R6 1 0 PA-GE 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm slot_add_binding R6 2 0 PA-GE 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm slot_add_binding R6 3 0 PA-GE 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:37:18.491 HYPERVISOR: exec_cmd: vm slot_add_binding R6 4 0 PA-GE 
+Jan 07 14:37:18.538 HYPERVISOR: exec_cmd: vm set_ios R6 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:37:24.272 HYPERVISOR: exec_cmd: vm set_ios R6 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:38:54.416 HYPERVISOR: exec_cmd: vm set_ios R6 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:39:49.518 HYPERVISOR: exec_cmd: vm set_ios R6 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:45:24.123 HYPERVISOR: exec_cmd: nio create_udp udp-5c876038-61a5-4652-afc9-63bd8667055b 10040 127.0.0.1 10041 
+Jan 07 14:45:24.429 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R6 1 0 udp-5c876038-61a5-4652-afc9-63bd8667055b 
+Jan 07 14:45:24.429 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:45:54.277 HYPERVISOR: exec_cmd: nio create_udp udp-915b3689-8775-4208-888b-fd774e68c2ac 10058 127.0.0.1 10059 
+Jan 07 14:45:54.284 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R6 2 0 udp-915b3689-8775-4208-888b-fd774e68c2ac 
+Jan 07 14:45:54.284 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:47:55.018 HYPERVISOR: exec_cmd: nio create_udp udp-406813b2-2ab9-4aff-8436-a91888a4acef 10062 127.0.0.1 10063 
+Jan 07 14:47:55.018 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R6 3 0 udp-406813b2-2ab9-4aff-8436-a91888a4acef 
+Jan 07 14:47:55.018 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:51:35.879 HYPERVISOR: exec_cmd: vm set_ghost_status R6 2 
+Jan 07 14:51:35.879 HYPERVISOR: exec_cmd: vm set_ghost_file R6 C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 07 14:51:35.879 HYPERVISOR: exec_cmd: vm get_status R6 
+Jan 07 14:51:35.911 HYPERVISOR: exec_cmd: vm set_config R6 configs\i6_startup-config.cfg 
+Jan 07 14:51:35.911 HYPERVISOR: exec_cmd: vm start R6 
+Jan 07 14:52:07.080 HYPERVISOR: exec_cmd: vm extract_config R6 

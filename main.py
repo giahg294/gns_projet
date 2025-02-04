@@ -18,7 +18,7 @@ def create_folder(name):
 if __name__ == "__main__":
 
     # Ouvrir et lire le fichier JSON, charger les données
-    with open('14routers.json', 'r') as file:
+    with open('16routers.json', 'r') as file:
         data = json.load(file)
 
     # Extraire les informations AS du JSON, créer des instances de la classe AS, les stocker dans la liste all_as
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     routers_info = generate_routers_dict(all_as)
 
     # Initialiser le compteur des types de connexions
-    connection_counts = {"111": 0, "112": 0, "113": 0, "border": 0}
+    connection_counts = {"101": 0, "111": 0, "113": 0, "112": 0, "122":0, "102" : 0,"border": 0}
     # Parcourir la matrice de connexion pour compter les types de connexions
     for conn in connections_matrix:
         connection_counts[conn[1]] += 1

@@ -1,0 +1,33 @@
+Jan 30 00:56:19.016 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 00:56:19.017 HYPERVISOR: Started on IP = localhost, TCP port = 51593.
+Jan 30 00:56:19.526 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 00:56:19.526 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips 
+Jan 30 00:56:19.526 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips
+Jan 30 00:56:19.526 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips\6f3ff8e8-983a-43bc-9284-911bf78bc71f 
+Jan 30 00:56:19.527 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_topo\GNS_topo_14\project-files\dynamips\6f3ff8e8-983a-43bc-9284-911bf78bc71f
+Jan 30 00:56:19.527 HYPERVISOR: exec_cmd: vm create R1 1 c7200 
+Jan 30 00:56:19.528 VM: VM R1 created.
+Jan 30 00:56:19.528 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5006 
+Jan 30 00:56:19.529 HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+Jan 30 00:56:19.529 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 30 00:56:19.529 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+Jan 30 00:56:19.529 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Jan 30 00:56:19.529 HYPERVISOR: exec_cmd: vm set_exec_area R1 64 
+Jan 30 00:56:19.530 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 30 00:56:19.531 HYPERVISOR: exec_cmd: c7200 set_mac_addr R1 ca01.066c.0000 
+Jan 30 00:56:19.531 HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+Jan 30 00:56:19.531 HYPERVISOR: exec_cmd: vm set_ram R1 512 
+Jan 30 00:56:19.532 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 30 00:56:19.532 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 PA-GE 
+Jan 30 00:56:19.532 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 30 00:56:19.532 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 PA-GE 
+Jan 30 00:57:11.825 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 30 01:05:50.873 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 30 01:05:50.874 HYPERVISOR: exec_cmd: vm extract_config R1 
+Jan 30 01:05:50.896 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 30 01:05:50.898 HYPERVISOR: exec_cmd: vm extract_config R1 
+Jan 30 01:05:50.900 HYPERVISOR: exec_cmd: vm delete R1 
+Jan 30 01:05:50.900 VM: VM R1 destroyed.
+Jan 30 01:05:50.921 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 30 01:05:51.339 HYPERVISOR: Stopped.
+Jan 30 01:05:51.339 GENERAL: reset done.

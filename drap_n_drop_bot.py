@@ -1,9 +1,7 @@
 import os
 import shutil
 
-path = "/mnt/c/Users/giaho/Documents/3A/GNS" # /!\ Remplacer par le chemin où le dosser GNS est stocké
-source = path + "/GNS_code/gns_projet/"
-destination = path + "/GNS_topo/GNS_topo_14/project-files/dynamips"
+destination = "GNS_topo_16/project-files/dynamips"
 
 # Définir la liste des répertoires cibles : 14 routers
 target_directory = [
@@ -21,21 +19,13 @@ target_directory = [
     "/ceb29b58-3e84-4da3-94d8-5486eb3b1a2a/configs", # R12
     "/d9da0c63-4491-40c3-9898-23a258a45eab/configs", # R13
     "/9ceedcee-8c91-431c-8c7a-e013bbe5df6b/configs", # R14
-    ]
+    "/2864d417-f20a-424e-b503-6cdcecd77b38/configs", # R15
+    "/e340a23d-8b73-438d-82f2-72c5ff808669/configs"  # R16
+]
 
 def drag_file(i, fichiers_config):
-    file = source + fichiers_config[i]
+    file = fichiers_config[i]
     target_file = destination + target_directory[i] + "/" + fichiers_config[i]
     shutil.move(file,target_file)
     print(f"le bot s'est occupé {fichiers_config[i]} avec succès.")
 
-# Définir une fonction pour déplacer un fichier du répertoire source vers le répertoire cible, en écrasant les fichiers portant le même nom dans le répertoire cible
-# def move_and_overwrite(source_file, target_directory):
-#     target_file = os.path.join(target_directory, os.path.basename(source_file))  # Générer le chemin du fichier cible
-#     # shutil.move(source_file, target_file)  # Déplacer le fichier et écraser le fichier cible
-#     print(target_file)
-#     if not os.path.exists(target_file):
-#         shutil.move(source_file, target_directory)
-#         print(f'{source_file} déplacé avec succès')
-#     else:
-#         print(f'{source_file} existe déjà')

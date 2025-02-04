@@ -1,0 +1,54 @@
+Jan 07 14:37:02.631 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 07 14:37:02.631 HYPERVISOR: Started on IP = localhost, TCP port = 49191.
+Jan 07 14:37:03.119 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 07 14:37:03.122 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips 
+Jan 07 14:37:03.122 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips
+Jan 07 14:37:03.122 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\19424c96-6364-4304-b90a-031c84feb3d5 
+Jan 07 14:37:03.127 GENERAL: working_dir=C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\19424c96-6364-4304-b90a-031c84feb3d5
+Jan 07 14:37:03.127 HYPERVISOR: exec_cmd: vm create R4 4 c7200 
+Jan 07 14:37:03.135 VM: VM R4 created.
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5003 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: c7200 get_mac_addr R4 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-FE 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm set_exec_area R4 64 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm set_ram R4 512 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm set_nvram R4 512 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 PA-GE 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm slot_add_binding R4 2 0 PA-GE 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm slot_add_binding R4 3 0 PA-GE 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:37:03.135 HYPERVISOR: exec_cmd: vm slot_add_binding R4 4 0 PA-GE 
+Jan 07 14:37:03.168 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:37:07.554 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:38:47.941 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:39:46.737 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/kanga/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 07 14:41:51.874 HYPERVISOR: exec_cmd: nio create_udp udp-a663d007-bdfc-415c-944f-50e7f878b699 10016 127.0.0.1 10017 
+Jan 07 14:41:52.142 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 4 0 udp-a663d007-bdfc-415c-944f-50e7f878b699 
+Jan 07 14:41:52.142 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:44:22.066 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:44:22.066 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R4 4 0 
+Jan 07 14:44:22.066 HYPERVISOR: exec_cmd: nio delete udp-a663d007-bdfc-415c-944f-50e7f878b699 
+Jan 07 14:44:43.375 HYPERVISOR: exec_cmd: nio create_udp udp-e72ecf5f-def1-40ea-9b82-7230644412a2 10016 127.0.0.1 10017 
+Jan 07 14:44:43.382 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 1 0 udp-e72ecf5f-def1-40ea-9b82-7230644412a2 
+Jan 07 14:44:43.382 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:45:18.571 HYPERVISOR: exec_cmd: nio create_udp udp-843e60cb-e37b-4844-9c64-39b69c8c9cb9 10032 127.0.0.1 10033 
+Jan 07 14:45:18.578 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 3 0 udp-843e60cb-e37b-4844-9c64-39b69c8c9cb9 
+Jan 07 14:45:18.578 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:45:24.121 HYPERVISOR: exec_cmd: nio create_udp udp-808776dc-1c7f-463f-936b-f65a5cf7204b 10038 127.0.0.1 10039 
+Jan 07 14:45:24.123 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 2 0 udp-808776dc-1c7f-463f-936b-f65a5cf7204b 
+Jan 07 14:45:24.123 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:45:48.165 HYPERVISOR: exec_cmd: nio create_udp udp-335a6c7d-3e92-43b5-8a44-7948e015ca5d 10050 127.0.0.1 10051 
+Jan 07 14:45:48.177 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 4 0 udp-335a6c7d-3e92-43b5-8a44-7948e015ca5d 
+Jan 07 14:45:48.177 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:51:35.845 HYPERVISOR: exec_cmd: vm set_ghost_status R4 2 
+Jan 07 14:51:35.845 HYPERVISOR: exec_cmd: vm set_ghost_file R4 C:\Users\kanga\GNS3\projects\GNSprojet\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 07 14:51:35.848 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 07 14:51:35.848 HYPERVISOR: exec_cmd: vm set_config R4 configs\i4_startup-config.cfg 
+Jan 07 14:51:35.864 HYPERVISOR: exec_cmd: vm start R4 
+Jan 07 14:52:07.078 HYPERVISOR: exec_cmd: vm extract_config R4 
