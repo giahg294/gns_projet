@@ -12,7 +12,7 @@ class Router:
         
 # Définition de la classe AS (Système Autonome)
 class AS:
-    def __init__(self, number, ip_range, loopback_range, protocol, routers):
+    def __init__(self, number, ip_range, loopback_range, protocol, routers, relation):
         # Initialisation de l'AS avec son numéro, plages d'adresses, protocole et routeurs
         self.number = number  # Numéro de l'AS
         self.ip_range = ip_range  # Plage d'adresses IP pour cet AS
@@ -20,6 +20,7 @@ class AS:
         self.protocol = protocol  # Protocole utilisé (RIP, OSPF, etc.)
         # Création d'instances de routeurs pour cet AS
         self.routers = [Router(router['name'], router['type'], router['interfaces']) for router in routers]
+        self.relation = relation
 
     def __str__(self):
         # Représentation textuelle de l'AS
@@ -118,26 +119,27 @@ def generate_interface_addresses(name, interfaces, connections, connection_count
                 ip_range = "2001:192:101::/64"
             elif state == "102":
                 ip_range = "2001:192:102::/64"
-            else:
-                ip_range = "2001:192:122::/64"
 
             connection = (connection, state)
             connection_index = connections.index(connection)
 
             # Calcule le sous-réseau selon l'état
-            if connection_index < connection_counts["113"]:
+            if state == "border":
                 subnet = connection_index
-            elif connection_counts["113"] <= connection_index < connection_counts["113"] + connection_counts["border"]:
-                subnet = connection_index - connection_counts["113"]
             else:
-                subnet = connection_index - connection_counts["border"] - connection_counts["101"]
-
+                if connection_index < connection_counts[state]:
+                    subnet = connection_index
+                elif connection_counts[state] <= connection_index < connection_counts[state] + connection_counts["border"]:
+                    subnet = connection_index - connection_counts[state]
+                else:
+                    subnet = connection_index - connection_counts["border"] - connection_counts[state]
        
             # Attribue une adresse selon le rôle (routeur ou voisin)
             address_number = 1 if router_index < neighbor_index else 2
             
             ipv6_address = f"{ip_range[:-4]}{subnet+1}::{address_number}/64"
             interface['ipv6_address'] = ipv6_address 
+
             
 
 # Génération de l'ID routeur (Router ID)
@@ -167,5 +169,5 @@ def generate_as_dict(all_as):
         for router in as_obj.routers:
             # Génère l'adresse loopback pour chaque routeur
             router_liste.append(router.name)
-        as_dico[as_obj.number] = {"routers": router_liste, "protocol":as_obj.protocol}
+        as_dico[as_obj.number] = {"routers":router_liste, "protocol":as_obj.protocol, "relation":as_obj.relation}
     return as_dico

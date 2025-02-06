@@ -1,0 +1,158 @@
+Connected to Dynamips VM "R6" (ID 6, type c7200) - Console port
+Press ENTER to get the prompt.
+ROMMON emulation microcode.
+
+                           Launching IOS image at 0x80008000...
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 7200 Software (C7200-ADVIPSERVICESK9-M), Version 15.2(4)S5,                                                                                                                                    RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Thu 20-Feb-14 06:51 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco 7206VXR (NPE400) processor (revision A) with 491520K/32768K bytes of memor                                                                                                                                   y.
+Processor board ID 4279256517
+R7000 CPU at 150MHz, Implementation 39, Rev 2.1, 256KB L2, 512KB L3 Cache
+6 slot VXR midplane, Version 2.1
+
+Last reset from power-on
+
+PCI bus mb0_mb1 (Slots 0, 1, 3 and 5) has a capacity of 600 bandwidth points.
+Current configuration on bus mb0_mb1 has a total of 1000 bandwidth points.
+The set of PA-2FE, PA-POS-2OC3, and I/O-2FE qualify for "half
+bandwidth points" consideration, when full bandwidth point counting
+results in oversubscription, under the condition that only one of the
+two ports is used. With this adjustment, current configuration on bus
+mb0_mb1 has a total of 1000 bandwidth points.
+This configuration has oversubscripted the PCI bus and is not a
+supported configuration.
+
+PCI bus mb2 (Slots 2, 4, 6) has a capacity of 600 bandwidth points.
+Current configuration on bus mb2 has a total of 800 bandwidth points
+The set of PA-2FE, PA-POS-2OC3, and I/O-2FE qualify for "half
+bandwidth points" consideration, when full bandwidth point counting
+results in oversubscription, under the condition that only one of the
+two ports is used. With this adjustment, current configuration on bus
+mb2 has a total of 800 bandwidth points.
+This configuration has oversubscripted the PCI bus and is not a
+supported configuration.
+
+Please refer to the following document "Cisco 7200 Series Port Adaptor
+Hardware Configuration Guidelines" on Cisco.com <http://www.cisco.com>
+for c7200 bandwidth points oversubscription and usage guidelines.
+
+WARNING: PCI bus mb0_mb1 Exceeds 600 bandwidth points
+WARNING: PCI bus mb2 Exceeds 600 bandwidth points
+
+1 FastEthernet interface
+4 Gigabit Ethernet interfaces
+509K bytes of NVRAM.
+
+8192K bytes of Flash internal SIMM (Sector size 256K).
+ address-family ipv6
+ ^
+% Invalid input detected at '^' marker.
+
+  neighbor 2001:192:170:5::1 route-map from_p in
+   ^
+% Invalid input detected at '^' marker.
+
+  neighbor 2001:192:170:5::1 route-map to_p out
+   ^
+% Invalid input detected at '^' marker.
+
+  neighbor 2001:192:170:5::1 route-map my_subnets out
+   ^
+% Invalid input detected at '^' marker.
+
+ exit-address-family
+     ^
+% Invalid input detected at '^' marker.
+
+ipv6 prefix-list my_subnets permit
+% Incomplete command.
+
+%Insertion failed - prefix-list entry exists:
+   seq 5 permit 2001:192:113:1::/64
+%Insertion failed - prefix-list entry exists:
+   seq 10 permit 2001:192:113:2::/64
+%Insertion failed - prefix-list entry exists:
+   seq 15 permit 2001:192:113:3::/64
+ipv6 prefix-list my_subnets permit
+% Incomplete command.
+
+%Insertion failed - prefix-list entry exists:
+   seq 5 permit 2001:192:113:1::/64
+%Insertion failed - prefix-list entry exists:
+   seq 10 permit 2001:192:113:2::/64
+%Insertion failed - prefix-list entry exists:
+   seq 15 permit 2001:192:113:3::/64
+ipv6 prefix-list my_subnets permit
+% Incomplete command.
+
+SETUP: new interface GigabitEthernet4/0 placed in "shutdown" state
+% Crashinfo may not be recovered at bootflash:crashinfo
+% This file system device reports an error
+
+
+Press RETURN to get started!
+
+
+*Feb  6 11:24:30.015: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-ta                                                                                                                                   ble No such file or directory
+*Feb  6 11:24:30.247: %PLATFORM-3-PACONFIG: Exceeds 600 bandwidth points for slo                                                                                                                                   ts 0, 1, 3 & 5
+*Feb  6 11:24:30.251: %PLATFORM-3-PACONFIG: Exceeds 600 bandwidth points on both                                                                                                                                    odd & even numbered slots
+*Feb  6 11:24:30.291: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr                                                                                                                                   5=0x0
+*Feb  6 11:24:33.967: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state t                                                                                                                                   o up
+*Feb  6 11:24:34.003: %LINK-3-UPDOWN: Interface GigabitEthernet1/0, changed stat                                                                                                                                   e to up
+*Feb  6 11:24:34.015: %LINK-3-UPDOWN: Interface GigabitEthernet2/0, changed stat                                                                                                                                   e to up
+*Feb  6 11:24:34.015: %LINK-3-UPDOWN: Interface GigabitEthernet3/0, changed stat                                                                                                                                   e to up
+*Feb  6 11:24:34.015: %LINK-3-UPDOWN: Interface GigabitEthernet4/0, changed stat                                                                                                                                   e to up
+*Feb  6 11:24:34.267: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0,                                                                                                                                    changed state to up
+*Feb  6 11:24:34.903: %SYS-5-CONFIG_I: Configured from memory by console
+*Feb  6 11:24:35.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthern                                                                                                                                   et0/0, changed state to up
+*Feb  6 11:24:35.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEth                                                                                                                                   ernet1/0, changed state to up
+*Feb  6 11:24:35.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEth                                                                                                                                   ernet2/0, changed state to up
+*Feb  6 11:24:35.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEth                                                                                                                                   ernet3/0, changed state to down
+*Feb  6 11:24:35.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEth                                                                                                                                   ernet4/0, changed state to down
+*Feb  6 11:24:35.243: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 7200 Software (C7200-ADVIPSERVICESK9-M), Version 15.2(4)S5,                                                                                                                                    RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Thu 20-Feb-14 06:51 by prod_rel_team
+*Feb  6 11:24:36.615: %LINK-5-CHANGED: Interface GigabitEthernet3/0, changed sta                                                                                                                                   te to administratively down
+*Feb  6 11:24:36.907: %LINK-5-CHANGED: Interface GigabitEthernet4/0, changed sta                                                                                                                                   te to administratively down
+*Feb  6 11:24:44.203: %BGP-5-ADJCHANGE: neighbor 2001:192:170:7::2 Up
+*Feb  6 11:24:45.627: %BGP-5-ADJCHANGE: neighbor 2001:192:170:5::1 Up
+*Feb  6 11:24:45.695: %BGP-5-ADJCHANGE: neighbor 2001:DB8:8::1 Up
+*Feb  6 11:24:46.047: %BGP-5-ADJCHANGE: neighbor 2001:DB8:7::1 Up
+*Feb  6 11:24:46.211: %BGP-5-ADJCHANGE: neighbor 2001:DB8:9::1 Up
