@@ -2,7 +2,7 @@ import json
 import os 
 from address_allocator import * 
 from fonctions_configuration import *
-from drap_n_drop_bot import * 
+from drag_n_drop_bot import * 
 
 def create_folder(name):
     # Vérifier si le dossier 'projet-files' existe déjà
