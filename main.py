@@ -22,11 +22,10 @@ if __name__ == "__main__":
         data = json.load(file)
 
     # Extraire les informations AS du JSON, créer des instances de la classe AS, les stocker dans la liste all_as
-    all_as = [AS(as_info['number'], as_info['IP_range'], as_info['loopback_range'], as_info['protocol'], as_info['routers']) 
+    all_as = [AS(as_info['number'], as_info['IP_range'], as_info['loopback_range'], as_info['protocol'], as_info['routers'], as_info['relation']) 
             for as_info in data['AS']]
 
     all_as_dict = generate_as_dict(all_as)
-            
     # Créer un dictionnaire as_mapping pour stocker le numéro AS auquel chaque routeur appartient
     as_mapping = {}
     for as_index in all_as:  # Parcourir toutes les instances AS
@@ -35,20 +34,19 @@ if __name__ == "__main__":
 
     # Créer une liste contenant tous les routeurs
     all_routers = [router for as_index in all_as for router in as_index.routers]
-
+    print(all_routers)
     # Générer le nom de la matrice de connexion à partir de la liste des routeurs et de la carte AS
     connections_matrix_name = generate_connections_matrix_name(all_routers, as_mapping)
-    print(connections_matrix_name)  # Imprimer le nom de la matrice de connexion
+    print(connections_matrix_name)
 
     # Générer la matrice de connexion à partir de la liste des routeurs et de la carte AS
     connections_matrix = generate_connections_matrix(all_routers, as_mapping)
-    print(connections_matrix)  # Imprimer la matrice de connexion
 
     # Générer un dictionnaire contenant les informations des routeurs
     routers_info = generate_routers_dict(all_as)
-
+    print(routers_info)
     # Initialiser le compteur des types de connexions
-    connection_counts = {"101": 0, "111": 0, "113": 0, "112": 0, "122":0, "102" : 0,"border": 0}
+    connection_counts = {"101": 0, "111": 0, "113": 0, "112": 0, "102" : 0,"border": 0}
     # Parcourir la matrice de connexion pour compter les types de connexions
     for conn in connections_matrix:
         connection_counts[conn[1]] += 1
@@ -76,7 +74,7 @@ if __name__ == "__main__":
             config.extend(config_head(router.name))
             config.extend(config_loopback(router_loopback, as_index.protocol))
             config.extend(config_interface(router.interfaces, as_index.protocol, router, connections_matrix_name))
-            config.extend(config_bgp(router, router_id, all_routers, connections_matrix_name, routers_info))
+            config.extend(config_bgp(router, router_id, all_routers, connections_matrix_name, routers_info, all_as_dict))
             config.extend(config_end(as_index.protocol, router_id, router, connections_matrix_name))
             
             # Écrire la configuration dans un fichier

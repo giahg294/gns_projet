@@ -98,70 +98,10 @@ def config_interface(interfaces, protocol, router, connections_matrix_name):
 
     return config
 
-def config_network(current_as,routers):
+def config_network(current_as, routers, routers_dict, neighbor_dico):
     networks = []
-    if current_as == "101":
-        for routeur in routers:
-            if routeur.name == "R1":
-                for interface in routeur.interfaces:
-                    ip_addr = interface.get('ipv6_address', '')
-                    if ip_addr:
-                        try:
-                            network = ipaddress.IPv6Network(ip_addr, strict=False)
-                            if network not in networks : 
-                                networks.append(network)
-                        except ValueError:
-                            print(f"Invalid IPv6 addresse: {ip_addr}")
-    elif current_as == "102":
-        for routeur in routers:
-            if routeur.name == "R16":
-                for interface in routeur.interfaces:
-                    ip_addr = interface.get('ipv6_address', '')
-                    if ip_addr:
-                        try:
-                            network = ipaddress.IPv6Network(ip_addr, strict=False)
-                            if network not in networks : 
-                                networks.append(network)
-                        except ValueError:
-                            print(f"Invalid IPv6 addresse: {ip_addr}")
-    elif current_as == "111":
-        for routeur in routers:
-            if routeur.name in ["R3","R4"]:
-                for interface in routeur.interfaces:
-                    ip_addr = interface.get('ipv6_address', '')
-                    if ip_addr:
-                        try:
-                            network = ipaddress.IPv6Network(ip_addr, strict=False)
-                            if network not in networks : 
-                                networks.append(network)
-                        except ValueError:
-                            print(f"Invalid IPv6 addresse: {ip_addr}")
-    elif current_as == "112":
-        for routeur in routers:
-            if routeur.name in ["R11","R12"]:
-                for interface in routeur.interfaces:
-                    ip_addr = interface.get('ipv6_address', '')
-                    if ip_addr:
-                        try:
-                            network = ipaddress.IPv6Network(ip_addr, strict=False)
-                            if network not in networks : 
-                                networks.append(network)
-                        except ValueError:
-                            print(f"Invalid IPv6 addresse: {ip_addr}")
-    elif current_as == "122":
-        for routeur in routers:
-            if routeur.name =="R14":
-                for interface in routeur.interfaces:
-                    ip_addr = interface.get('ipv6_address', '')
-                    if ip_addr:
-                        try:
-                            network = ipaddress.IPv6Network(ip_addr, strict=False)
-                            if network not in networks : 
-                                networks.append(network)
-                        except ValueError:
-                            print(f"Invalid IPv6 addresse: {ip_addr}")
-    else:
-        for routeur in routers:
+    for routeur in routers:
+        if routeur.name in neighbor_dico.keys() or (current_as == routers_dict[routeur.name]['AS'] and routeur.router_type == 'iBGP'):
             for interface in routeur.interfaces:
                 ip_addr = interface.get('ipv6_address', '')
                 if ip_addr:
@@ -175,12 +115,11 @@ def config_network(current_as,routers):
 
 
 # Configure bgp neighbor
-def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict):
+def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict, as_dict):
     # Configurer les voisins BGP
     config = []
     current_as = routers_dict[router.name]['AS']  # Numéro d'AS actuel
-    neighbor_liste = []
-
+    neighbor_dico = {}
     config.append(f"router bgp {current_as}")  # Définir l'AS pour BGP
     config.append(f" bgp router-id {router_id}")  # Identifier le routeur
     config.append(" bgp log-neighbor-changes")  # Journaliser les modifications des voisins
@@ -188,7 +127,6 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
 
     if router.router_type == "eBGP":
         neighbor_ip = None
-
         for elem in connections_matrix_name:
             ((r1, r2), state) = elem
 
@@ -206,43 +144,99 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
                             for interface in routeur.interfaces:
                                 if interface['neighbor'] == router.name:
                                     neighbor_ip = interface.get('ipv6_address', '')
+                                    neighbor_dico[routeur.name] = neighbor_ip[:-3]
                                     break
 
                     if neighbor_ip:
                         as_number = routers_dict[neighbor]['AS']  # Obtenir l'AS du voisin
                         config.append(f" neighbor {neighbor_ip[:-3]} remote-as {as_number}")
-                        neighbor_liste.append(neighbor_ip[:-3])
 
+    loopback = []
     for routeur_name, routeur_info in routers_dict.items():
-        if routeur_name != router.name and routeur_info['AS'] == current_as:
-            # Configurer les voisins internes
-            config.append(f" neighbor {routeur_info['loopback'][:-4]} remote-as {routeur_info['AS']}")
-            config.append(f" neighbor {routeur_info['loopback'][:-4]} update-source Loopback0")
-            neighbor_liste.append(routeur_info['loopback'][:-4])
-
+        if routeur_info['AS'] == current_as:
+            loopback.append(routeur_info['loopback'])
+            if routeur_name != router.name : 
+                config.append(f" neighbor {routeur_info['loopback'][:-4]} remote-as {routeur_info['AS']}")
+                config.append(f" neighbor {routeur_info['loopback'][:-4]} update-source Loopback0")
+                neighbor_dico[routeur_name] = routeur_info['loopback'][:-4]
+            
     config.append(" !")
     config.append(" address-family ipv4")  # Configurer la famille d'adresses IPv4
     config.append(" exit-address-family")
     config.append(" !")
     config.append(" address-family ipv6")  # Configurer la famille d'adresses IPv6
 
-    # Annoncer tous les sous-réseaux d'un AS
-    liste = list(routers_dict.keys())
-    if router.name == liste[1] or liste[4] or liste[5] or liste[6] or liste[7] or liste[8] or liste[9] or liste[11] or liste[12] or liste[8] or liste[14]:
-        networks = config_network(current_as, routers)  
-
-        # Trier les sous-réseaux
-    networks.sort(key=lambda net: (net.network_address, net.prefixlen))
-
-    for network in networks:
-        config.append(f"  network {str(network)}")  # Ajouter les sous-réseaux à la configuration
-
     # Activer les voisins IPv6
-    for ip_neighbor in neighbor_liste:
+    for name,ip_neighbor in neighbor_dico.items():
         config.append(f"  neighbor {ip_neighbor} activate")
-
+        
+    # Annoncer tous les sous-réseaux d'un AS
+    if router.router_type == "eBGP":
+        networks = config_network(current_as, routers, routers_dict, neighbor_dico)  
+        # Trier les sous-réseaux
+        networks.sort(key=lambda net: (net.network_address, net.prefixlen))
+        for network in networks:
+            config.append(f"  network {str(network)}")  # Ajouter les sous-réseaux à la configuration
+        for looloo in loopback:
+            config.append(f"  network {looloo}")
+    
     config.append(" exit-address-family")
     config.append("!")
+
+    # if router.router_type == "eBGP":
+    #     # Redistribution des routes avec policies
+    #     if current_as == "113":
+    #         for routeur_name, ip_neighbor in neighbor_dico.items():
+    #             if ip_neighbor.startswith("2001:192:170:"):
+    #                 neighbor_as = routers_dict[routeur_name]['AS']
+    #                 relation = as_dict[neighbor_as]["relation"]
+    #                 config.append("!")
+    #                 config.append(f"router bgp {current_as}")
+    #                 config.append(" !")
+    #                 config.append(" address-family ipv6")
+                    
+    #                 if relation == "client":
+    #                     config.append(f"  neighbor {ip_neighbor} route-map to_{relation} out")
+    #                     config.append(f"  neighbor {ip_neighbor} route-map from_{relation} in")
+    #                 else:
+    #                     config.append(f"  neighbor {ip_neighbor} route-map from_p in")
+    #                 config.append(f"  neighbor {ip_neighbor} route-map my_subnets out")
+    #                 config.append(" exit-address-family")
+    #                 config.append("!")
+                    
+    #                 if relation == "client": # from
+    #                     config.append("!")
+    #                     config.append(f"route-map from_{relation} permit 10")
+    #                     config.append(f" set community 6553700 additive")
+    #                     config.append("!")
+    #                 elif relation == "provider" or "peer":
+    #                     config.append("!")
+    #                     config.append(f"route-map from_p permit 10")
+    #                     config.append(f" set community 7340154 additive")
+    #                     config.append("!")
+                    
+    #                 if relation == "client": # to
+    #                     config.append("!")
+    #                     config.append(f"route-map to_{relation} permit 10")
+    #                     config.append("ip community-list standard client permit 6553700")
+    #                     config.append("ip community-list standard client permit 7340154")  
+    #                     config.append("!")
+    #                 elif relation == "provider" or "peer":
+    #                     config.append("!")
+    #                     config.append("ip community-list standard block_p deny 7340154")
+    #                     config.append("ip community-list standard block_p permit 6553700")
+    #                     config.append("!")
+    #                     config.append(f"route-map to_p permit 10")
+    #                     config.append(f" match community block_p")
+    #                     config.append("!")
+
+    #         config.append("!")
+    #         config.append(f"ipv6 prefix-list my_subnets permit {str(network)}")
+    #         config.append("!")
+    #         config.append("!")
+    #         config.append(f"route-map my_subnets permit 10")
+    #         config.append(f" set community 6553700 additive")
+    #         config.append("!")
 
     return config
 
