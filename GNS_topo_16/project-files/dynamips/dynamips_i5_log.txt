@@ -1,187 +1,29 @@
-Feb 05 02:26:06.577 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Feb 05 02:26:06.577 HYPERVISOR: Started on IP = localhost, TCP port = 50769.
-Feb 05 02:26:06.577 HYPERVISOR: exec_cmd: hypervisor version 
-Feb 05 02:26:06.577 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips 
-Feb 05 02:26:06.577 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips
-Feb 05 02:26:06.577 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\85920f6a-1a0e-4304-bb8a-a49742f58b81 
-Feb 05 02:26:06.577 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\85920f6a-1a0e-4304-bb8a-a49742f58b81
-Feb 05 02:26:06.577 HYPERVISOR: exec_cmd: vm create R10 10 c7200 
-Feb 05 02:26:06.577 VM: VM R10 created.
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm set_con_tcp_port R10 5004 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: c7200 get_mac_addr R10 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm slot_add_binding R10 0 0 C7200-IO-FE 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm set_disk0 R10 0 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm set_exec_area R10 64 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: c7200 set_mac_addr R10 ca0a.88cc.0000 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm set_nvram R10 512 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm set_ram R10 512 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm slot_add_binding R10 1 0 PA-GE 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm slot_add_binding R10 2 0 PA-GE 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm slot_add_binding R10 3 0 PA-GE 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:06.582 HYPERVISOR: exec_cmd: vm slot_add_binding R10 4 0 PA-GE 
-Feb 05 02:26:13.163 HYPERVISOR: exec_cmd: nio create_udp udp-4d986fdc-8418-49a0-97fa-b99f95bc5559 10004 127.0.0.1 10005 
-Feb 05 02:26:13.418 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R10 0 0 udp-4d986fdc-8418-49a0-97fa-b99f95bc5559 
-Feb 05 02:26:13.418 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:13.465 HYPERVISOR: exec_cmd: nio create_udp udp-9fe7f8b7-28bb-44fb-8533-3bf07beda3db 10008 127.0.0.1 10009 
-Feb 05 02:26:13.465 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R10 1 0 udp-9fe7f8b7-28bb-44fb-8533-3bf07beda3db 
-Feb 05 02:26:13.465 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:58.181 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 05 02:26:58.195 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 02:26:58.195 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 02:26:58.205 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 05 02:26:58.205 HYPERVISOR: exec_cmd: vm start R10 
-Feb 05 02:27:28.506 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 05 02:50:29.207 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 05 03:54:48.263 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 03:54:48.263 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 05 03:54:48.455 VM: VM R10 shutdown.
-Feb 05 03:54:48.457 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 05 03:54:49.436 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 05 03:54:49.475 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 03:54:49.477 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 03:54:49.506 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 05 03:54:49.507 HYPERVISOR: exec_cmd: vm start R10 
-Feb 05 03:59:20.347 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 03:59:20.347 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 05 03:59:20.445 VM: VM R10 shutdown.
-Feb 05 03:59:20.445 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 05 03:59:49.921 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 05 03:59:49.923 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 03:59:49.923 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 03:59:49.932 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 05 03:59:49.937 HYPERVISOR: exec_cmd: vm start R10 
-Feb 05 04:41:51.041 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 05 04:41:58.170 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 05 04:41:58.170 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 05 04:41:58.301 VM: VM R10 shutdown.
-Feb 05 04:41:58.302 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 05 16:44:53.460 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:56:13.948 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 01:56:13.948 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R10 0 0 
-Feb 06 01:56:13.948 HYPERVISOR: exec_cmd: nio delete udp-4d986fdc-8418-49a0-97fa-b99f95bc5559 
-Feb 06 01:56:40.664 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:57:08.465 HYPERVISOR: exec_cmd: nio create_udp udp-cb45bbdf-6f62-48bd-9c1d-e959e392b420 10004 127.0.0.1 10005 
-Feb 06 01:57:08.472 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R10 3 0 udp-cb45bbdf-6f62-48bd-9c1d-e959e392b420 
-Feb 06 01:57:08.472 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 01:57:52.587 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 01:57:52.587 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R10 3 0 
-Feb 06 01:57:52.587 HYPERVISOR: exec_cmd: nio delete udp-cb45bbdf-6f62-48bd-9c1d-e959e392b420 
-Feb 06 01:58:00.860 HYPERVISOR: exec_cmd: nio create_udp udp-42c76639-ca54-4a93-8847-839d90736a9c 10004 127.0.0.1 10005 
-Feb 06 01:58:00.865 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R10 0 0 udp-42c76639-ca54-4a93-8847-839d90736a9c 
-Feb 06 01:58:00.865 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 01:59:03.488 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:59:07.002 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:59:15.489 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:59:22.690 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 02:00:34.034 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 02:00:34.034 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R10 0 0 
-Feb 06 02:00:34.034 HYPERVISOR: exec_cmd: nio delete udp-42c76639-ca54-4a93-8847-839d90736a9c 
-Feb 06 02:01:00.445 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 02:01:00.445 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R10 1 0 
-Feb 06 02:01:00.445 HYPERVISOR: exec_cmd: nio delete udp-9fe7f8b7-28bb-44fb-8533-3bf07beda3db 
-Feb 06 02:01:09.116 HYPERVISOR: exec_cmd: nio create_udp udp-d08ba906-fe56-4c74-9e1a-f2af892a3f25 10002 127.0.0.1 10003 
-Feb 06 02:01:09.126 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R10 1 0 udp-d08ba906-fe56-4c74-9e1a-f2af892a3f25 
-Feb 06 02:01:09.126 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 02:01:14.024 HYPERVISOR: exec_cmd: nio create_udp udp-a9bedad7-ecae-4c85-bfc4-41e95d9a75e6 10008 127.0.0.1 10009 
-Feb 06 02:01:14.026 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R10 0 0 udp-a9bedad7-ecae-4c85-bfc4-41e95d9a75e6 
-Feb 06 02:01:14.026 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 02:49:40.672 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 02:49:40.673 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 03:18:36.554 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 03:18:36.567 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:18:36.569 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:18:36.584 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 03:18:36.585 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 03:19:20.710 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 03:22:55.715 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:22:55.715 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 03:22:55.844 VM: VM R10 shutdown.
-Feb 06 03:22:55.847 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 03:35:29.185 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:35:29.185 HYPERVISOR: exec_cmd: vm set_idle_pc R10 0x0 
-Feb 06 03:35:29.186 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:35:29.186 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:35:29.199 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 03:35:29.199 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 03:35:49.531 HYPERVISOR: exec_cmd: vm get_idle_pc_prop R10 0 
-Feb 06 03:36:05.113 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:36:05.113 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 03:36:05.261 VM: VM R10 shutdown.
-Feb 06 03:36:05.264 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 03:36:09.569 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 03:36:52.242 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 03:36:52.242 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:36:52.243 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:36:52.268 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 03:36:52.269 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 03:36:57.342 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 03:43:06.017 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:43:06.017 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 03:43:06.117 VM: VM R10 shutdown.
-Feb 06 03:43:06.118 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 03:46:42.132 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 03:46:42.133 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:46:42.133 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:46:42.145 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 03:46:42.147 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 03:50:49.469 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:50:49.469 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 03:50:49.594 VM: VM R10 shutdown.
-Feb 06 03:50:49.597 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 03:59:24.663 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 03:59:24.663 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R10 1 0 
-Feb 06 03:59:24.665 HYPERVISOR: exec_cmd: nio delete udp-d08ba906-fe56-4c74-9e1a-f2af892a3f25 
-Feb 06 03:59:53.664 HYPERVISOR: exec_cmd: nio create_udp udp-e06b5bf8-63f8-4ed6-a3c1-7aa8f921af92 10046 127.0.0.1 10047 
-Feb 06 03:59:53.666 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R10 1 0 udp-e06b5bf8-63f8-4ed6-a3c1-7aa8f921af92 
-Feb 06 03:59:53.666 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:26:14.720 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 04:26:14.720 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:26:14.721 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:26:14.732 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 04:26:14.733 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 04:34:44.326 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:34:44.326 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 04:34:44.431 VM: VM R10 shutdown.
-Feb 06 04:34:44.432 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 04:34:45.286 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 04:34:45.300 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:34:45.301 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:34:45.315 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 04:34:45.316 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 04:34:59.841 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:34:59.841 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 04:34:59.936 VM: VM R10 shutdown.
-Feb 06 04:34:59.937 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 04:35:04.432 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 04:35:04.432 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:35:04.433 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:35:04.444 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 04:35:04.444 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 04:39:44.662 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:39:44.662 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 04:39:44.812 VM: VM R10 shutdown.
-Feb 06 04:39:44.814 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 04:48:36.804 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 04:48:36.814 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:48:36.817 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 04:48:36.829 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 04:48:36.830 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 06:37:38.366 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 06:37:38.368 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 06:37:38.492 VM: VM R10 shutdown.
-Feb 06 06:37:38.494 HYPERVISOR: exec_cmd: vm extract_config R10 
-Feb 06 06:57:57.429 HYPERVISOR: exec_cmd: vm set_ghost_status R10 2 
-Feb 06 06:57:57.429 HYPERVISOR: exec_cmd: vm set_ghost_file R10 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 06:57:57.429 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 06:57:57.445 HYPERVISOR: exec_cmd: vm set_config R10 configs\i10_startup-config.cfg configs\i10_private-config.cfg 
-Feb 06 06:57:57.446 HYPERVISOR: exec_cmd: vm start R10 
-Feb 06 07:05:22.781 HYPERVISOR: exec_cmd: vm get_status R10 
-Feb 06 07:05:22.781 HYPERVISOR: exec_cmd: vm stop R10 
-Feb 06 07:05:22.966 VM: VM R10 shutdown.
-Feb 06 07:05:22.966 HYPERVISOR: exec_cmd: vm extract_config R10 
+Feb 06 11:22:45.791 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 06 11:22:45.791 HYPERVISOR: Started on IP = localhost, TCP port = 61706.
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips 
+Feb 06 11:22:46.284 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\85920f6a-1a0e-4304-bb8a-a49742f58b81 
+Feb 06 11:22:46.284 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\85920f6a-1a0e-4304-bb8a-a49742f58b81
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: vm create R10 10 c7200 
+Feb 06 11:22:46.284 VM: VM R10 created.
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: vm set_con_tcp_port R10 5004 
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: c7200 get_mac_addr R10 
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: vm get_status R10 
+Feb 06 11:22:46.284 HYPERVISOR: exec_cmd: vm slot_add_binding R10 0 0 C7200-IO-FE 
+Feb 06 11:22:46.291 HYPERVISOR: exec_cmd: vm set_disk0 R10 0 
+Feb 06 11:22:46.291 HYPERVISOR: exec_cmd: vm set_exec_area R10 64 
+Feb 06 11:22:46.291 HYPERVISOR: exec_cmd: vm get_status R10 
+Feb 06 11:22:46.291 HYPERVISOR: exec_cmd: vm set_idle_pc R10 0x0 
+Feb 06 11:22:46.291 HYPERVISOR: exec_cmd: vm set_ios R10 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Feb 06 11:22:46.291 HYPERVISOR: exec_cmd: c7200 set_mac_addr R10 ca0a.88cc.0000 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm set_nvram R10 512 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm set_ram R10 512 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm get_status R10 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm slot_add_binding R10 1 0 PA-GE 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm get_status R10 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm slot_add_binding R10 2 0 PA-GE 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm get_status R10 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm slot_add_binding R10 3 0 PA-GE 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm get_status R10 
+Feb 06 11:22:46.295 HYPERVISOR: exec_cmd: vm slot_add_binding R10 4 0 PA-GE 

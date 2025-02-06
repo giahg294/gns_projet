@@ -183,60 +183,78 @@ def config_bgp(router, router_id, routers, connections_matrix_name, routers_dict
     config.append(" exit-address-family")
     config.append("!")
 
-    # if router.router_type == "eBGP":
-    #     # Redistribution des routes avec policies
-    #     if current_as == "113":
-    #         for routeur_name, ip_neighbor in neighbor_dico.items():
-    #             if ip_neighbor.startswith("2001:192:170:"):
-    #                 neighbor_as = routers_dict[routeur_name]['AS']
-    #                 relation = as_dict[neighbor_as]["relation"]
-    #                 config.append("!")
-    #                 config.append(f"router bgp {current_as}")
-    #                 config.append(" !")
-    #                 config.append(" address-family ipv6")
+    if router.router_type == "eBGP":
+        # Redistribution des routes avec policies
+        if current_as == "113":
+            for routeur_name, ip_neighbor in neighbor_dico.items():
+                if ip_neighbor.startswith("2001:192:170:"):
+                    neighbor_as = routers_dict[routeur_name]['AS']
+                    relation = as_dict[neighbor_as]["relation"]
+                    config.append(" address-family ipv6")
                     
-    #                 if relation == "client":
-    #                     config.append(f"  neighbor {ip_neighbor} route-map to_{relation} out")
-    #                     config.append(f"  neighbor {ip_neighbor} route-map from_{relation} in")
-    #                 else:
-    #                     config.append(f"  neighbor {ip_neighbor} route-map from_p in")
-    #                 config.append(f"  neighbor {ip_neighbor} route-map my_subnets out")
-    #                 config.append(" exit-address-family")
-    #                 config.append("!")
-                    
-    #                 if relation == "client": # from
-    #                     config.append("!")
-    #                     config.append(f"route-map from_{relation} permit 10")
-    #                     config.append(f" set community 6553700 additive")
-    #                     config.append("!")
-    #                 elif relation == "provider" or "peer":
-    #                     config.append("!")
-    #                     config.append(f"route-map from_p permit 10")
-    #                     config.append(f" set community 7340154 additive")
-    #                     config.append("!")
-                    
-    #                 if relation == "client": # to
-    #                     config.append("!")
-    #                     config.append(f"route-map to_{relation} permit 10")
-    #                     config.append("ip community-list standard client permit 6553700")
-    #                     config.append("ip community-list standard client permit 7340154")  
-    #                     config.append("!")
-    #                 elif relation == "provider" or "peer":
-    #                     config.append("!")
-    #                     config.append("ip community-list standard block_p deny 7340154")
-    #                     config.append("ip community-list standard block_p permit 6553700")
-    #                     config.append("!")
-    #                     config.append(f"route-map to_p permit 10")
-    #                     config.append(f" match community block_p")
-    #                     config.append("!")
+                    if relation == "client":
+                        config.append(f"  neighbor {ip_neighbor} route-map to_{relation} out")
+                        config.append(f"  neighbor {ip_neighbor} route-map from_{relation} in")
+                    else:
+                        config.append(f"  neighbor {ip_neighbor} route-map from_p in")
+                        config.append(f"  neighbor {ip_neighbor} route-map to_p out")
 
-    #         config.append("!")
-    #         config.append(f"ipv6 prefix-list my_subnets permit {str(network)}")
-    #         config.append("!")
-    #         config.append("!")
-    #         config.append(f"route-map my_subnets permit 10")
-    #         config.append(f" set community 6553700 additive")
-    #         config.append("!")
+                    config.append(f"  neighbor {ip_neighbor} route-map my_subnets out")
+                    config.append(" exit-address-family")
+                    config.append("!")
+                    
+                    if relation == "client": # from
+                        config.append("!")
+                        config.append(f"route-map from_{relation} permit 20")
+                        config.append(f" set community 6553700 additive")
+                        config.append(" set local-preference 200")
+                        config.append("!")
+                    elif relation == "provider" or "peer":
+                        config.append("!")
+                        config.append(f"route-map from_p permit 10")
+                        config.append(f" set community 7340154 additive")
+                        if relation == "peer":
+                            config.append(" set local-preference 150")
+                        else:
+                            config.append(" set local-preference 100")
+                        config.append("!")
+                    
+                    if relation == "client": # to
+                        config.append("!")
+                        config.append(f"route-map to_{relation} permit 20")
+                        config.append("ip community-list standard client permit 6553700")
+                        config.append("ip community-list standard client permit 7340154")  
+                        config.append("!")
+                    elif relation == "provider" or "peer":
+                        config.append("!")
+                        config.append("ip community-list standard block_p deny 7340154")
+                        config.append("ip community-list standard block_p permit 6553700")
+                        config.append("!")
+                        config.append(f"route-map to_p permit 10")
+                        config.append(f" match community block_p")
+                        config.append("!")
+
+            config.append("!")
+            for elem in connections_matrix_name:
+                ((r1, r2), state) = elem
+
+                if state == '113':
+                    if router.name == r1:
+                        neighbor = r2
+                    elif router.name == r2:
+                        neighbor = r1
+
+                    if neighbor:
+                        for routeur in routers:
+                            if routeur.name == neighbor:
+                                for interface in routeur.interfaces:
+                                    neighbor_ip = interface.get('ipv6_address', '')
+                                    config.append(f"ipv6 prefix-list my_subnets permit {str(neighbor_ip)}")
+            config.append("!")
+            config.append("!")
+            config.append(f"route-map my_subnets permit 50")
+            config.append(f" set community 6553700 additive")
+            config.append("!")
 
     return config
 

@@ -1,188 +1,27 @@
-Feb 05 02:26:05.999 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Feb 05 02:26:06.002 HYPERVISOR: Started on IP = localhost, TCP port = 50766.
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: hypervisor version 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips 
-Feb 05 02:26:06.513 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\a2960629-2a83-4559-8478-5ee6a403e87a 
-Feb 05 02:26:06.513 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\a2960629-2a83-4559-8478-5ee6a403e87a
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm create R8 8 c7200 
-Feb 05 02:26:06.513 VM: VM R8 created.
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm set_con_tcp_port R8 5003 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: c7200 get_mac_addr R8 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm slot_add_binding R8 0 0 C7200-IO-FE 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm set_disk0 R8 0 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm set_exec_area R8 64 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm set_ios R8 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: c7200 set_mac_addr R8 ca08.7c7c.0000 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm set_nvram R8 512 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm set_ram R8 512 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm slot_add_binding R8 1 0 PA-GE 
-Feb 05 02:26:06.513 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:06.522 HYPERVISOR: exec_cmd: vm slot_add_binding R8 2 0 PA-GE 
-Feb 05 02:26:06.522 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:06.522 HYPERVISOR: exec_cmd: vm slot_add_binding R8 3 0 PA-GE 
-Feb 05 02:26:06.522 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:06.522 HYPERVISOR: exec_cmd: vm slot_add_binding R8 4 0 PA-GE 
-Feb 05 02:26:14.648 HYPERVISOR: exec_cmd: nio create_udp udp-3d3658fc-724c-4559-8daa-4a395e4d6305 10026 127.0.0.1 10027 
-Feb 05 02:26:14.903 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 0 0 udp-3d3658fc-724c-4559-8daa-4a395e4d6305 
-Feb 05 02:26:14.903 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:17.142 HYPERVISOR: exec_cmd: nio create_udp udp-15b31cb1-0712-41ea-8ea2-705682d536f0 10064 127.0.0.1 10065 
-Feb 05 02:26:17.142 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 2 0 udp-15b31cb1-0712-41ea-8ea2-705682d536f0 
-Feb 05 02:26:17.142 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:17.188 HYPERVISOR: exec_cmd: nio create_udp udp-ccf7c5b6-e3b5-4993-85e7-d4f9d02c1ba6 10068 127.0.0.1 10069 
-Feb 05 02:26:17.188 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 1 0 udp-ccf7c5b6-e3b5-4993-85e7-d4f9d02c1ba6 
-Feb 05 02:26:17.193 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:58.181 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 05 02:26:58.181 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 02:26:58.181 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 02:26:58.195 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 05 02:26:58.195 HYPERVISOR: exec_cmd: vm start R8 
-Feb 05 02:27:28.506 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 05 03:54:48.261 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 03:54:48.263 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 05 03:54:48.487 VM: VM R8 shutdown.
-Feb 05 03:54:48.489 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 05 03:54:49.429 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 05 03:54:49.436 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 03:54:49.436 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 03:54:49.475 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 05 03:54:49.477 HYPERVISOR: exec_cmd: vm start R8 
-Feb 05 03:59:20.347 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 03:59:20.347 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 05 03:59:20.459 VM: VM R8 shutdown.
-Feb 05 03:59:20.461 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 05 03:59:49.900 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 05 03:59:49.900 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 03:59:49.900 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 03:59:49.917 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 05 03:59:49.917 HYPERVISOR: exec_cmd: vm start R8 
-Feb 05 04:41:58.168 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 04:41:58.170 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 05 04:41:58.362 VM: VM R8 shutdown.
-Feb 05 04:41:58.366 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 05 16:34:26.434 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 16:34:26.434 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 0 0 
-Feb 05 16:34:26.434 HYPERVISOR: exec_cmd: nio delete udp-3d3658fc-724c-4559-8daa-4a395e4d6305 
-Feb 05 16:35:53.393 HYPERVISOR: exec_cmd: nio create_udp udp-b91efc48-0ae8-4040-b192-ae5928c6d276 10026 127.0.0.1 10027 
-Feb 05 16:35:53.393 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 0 0 udp-b91efc48-0ae8-4040-b192-ae5928c6d276 
-Feb 05 16:35:53.393 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 05 16:44:53.979 HYPERVISOR: exec_cmd: vm set_ios R8 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:58:06.390 HYPERVISOR: exec_cmd: nio create_udp udp-e8796111-2e93-429f-a78a-f49acf25b01a 10080 127.0.0.1 10081 
-Feb 06 01:58:06.396 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 3 0 udp-e8796111-2e93-429f-a78a-f49acf25b01a 
-Feb 06 01:58:06.396 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:00:41.629 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:00:41.629 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 3 0 
-Feb 06 02:00:41.629 HYPERVISOR: exec_cmd: nio delete udp-e8796111-2e93-429f-a78a-f49acf25b01a 
-Feb 06 02:00:44.264 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:00:44.264 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 1 0 
-Feb 06 02:00:44.264 HYPERVISOR: exec_cmd: nio delete udp-ccf7c5b6-e3b5-4993-85e7-d4f9d02c1ba6 
-Feb 06 02:01:31.757 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:01:31.757 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 2 0 
-Feb 06 02:01:31.757 HYPERVISOR: exec_cmd: nio delete udp-15b31cb1-0712-41ea-8ea2-705682d536f0 
-Feb 06 02:02:01.599 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:02:01.599 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 0 0 
-Feb 06 02:02:01.599 HYPERVISOR: exec_cmd: nio delete udp-b91efc48-0ae8-4040-b192-ae5928c6d276 
-Feb 06 02:02:06.659 HYPERVISOR: exec_cmd: nio create_udp udp-85306345-a0f0-4983-adfb-7c704069db0d 10020 127.0.0.1 10021 
-Feb 06 02:02:06.669 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 0 0 udp-85306345-a0f0-4983-adfb-7c704069db0d 
-Feb 06 02:02:06.669 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:02:10.224 HYPERVISOR: exec_cmd: nio create_udp udp-06428498-0f00-4770-afe5-3e10d8751873 10026 127.0.0.1 10027 
-Feb 06 02:02:10.229 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 1 0 udp-06428498-0f00-4770-afe5-3e10d8751873 
-Feb 06 02:02:10.229 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:02:15.475 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:02:15.475 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 1 0 
-Feb 06 02:02:15.480 HYPERVISOR: exec_cmd: nio delete udp-06428498-0f00-4770-afe5-3e10d8751873 
-Feb 06 02:02:24.020 HYPERVISOR: exec_cmd: nio create_udp udp-0e375c7b-41d9-4a28-96af-d671edcfe9c5 10026 127.0.0.1 10027 
-Feb 06 02:02:24.022 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 1 0 udp-0e375c7b-41d9-4a28-96af-d671edcfe9c5 
-Feb 06 02:02:24.022 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:02:32.651 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:02:32.651 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 1 0 
-Feb 06 02:02:32.651 HYPERVISOR: exec_cmd: nio delete udp-0e375c7b-41d9-4a28-96af-d671edcfe9c5 
-Feb 06 02:02:38.561 HYPERVISOR: exec_cmd: nio create_udp udp-4ec86381-1d10-44ae-914f-122e51da85d4 10026 127.0.0.1 10027 
-Feb 06 02:02:38.561 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 1 0 udp-4ec86381-1d10-44ae-914f-122e51da85d4 
-Feb 06 02:02:38.561 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:03:05.742 HYPERVISOR: exec_cmd: nio create_udp udp-352a24bd-a862-4445-bb06-2947413e9197 10062 127.0.0.1 10063 
-Feb 06 02:03:05.747 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 2 0 udp-352a24bd-a862-4445-bb06-2947413e9197 
-Feb 06 02:03:05.747 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:09:24.604 HYPERVISOR: exec_cmd: vm set_ios R8 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 02:12:03.748 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:12:03.748 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R8 2 0 
-Feb 06 02:12:03.748 HYPERVISOR: exec_cmd: nio delete udp-352a24bd-a862-4445-bb06-2947413e9197 
-Feb 06 02:13:02.659 HYPERVISOR: exec_cmd: nio create_udp udp-0b7d3be2-c4e7-4e23-957d-a2f6219bc722 10064 127.0.0.1 10065 
-Feb 06 02:13:02.659 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 2 0 udp-0b7d3be2-c4e7-4e23-957d-a2f6219bc722 
-Feb 06 02:13:02.659 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:49:40.672 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 02:49:40.673 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 03:18:36.553 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 03:18:36.553 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:18:36.553 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 03:18:36.566 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 03:18:36.569 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 03:22:55.715 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 03:22:55.715 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 03:22:55.864 VM: VM R8 shutdown.
-Feb 06 03:22:55.864 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 03:36:52.215 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 03:36:52.216 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:36:52.216 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 03:36:52.237 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 03:36:52.239 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 03:43:05.995 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 03:43:05.995 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 03:43:06.177 VM: VM R8 shutdown.
-Feb 06 03:43:06.179 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 03:46:42.106 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 03:46:42.106 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:46:42.106 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 03:46:42.120 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 03:46:42.121 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 03:50:49.445 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 03:50:49.445 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 03:50:49.644 VM: VM R8 shutdown.
-Feb 06 03:50:49.647 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 04:26:14.697 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 04:26:14.697 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:26:14.698 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 04:26:14.712 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 04:26:14.712 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 04:34:44.325 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 04:34:44.326 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 04:34:44.455 VM: VM R8 shutdown.
-Feb 06 04:34:44.456 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 04:34:45.284 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 04:34:45.285 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:34:45.286 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 04:34:45.299 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 04:34:45.300 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 04:34:59.841 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 04:34:59.841 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 04:34:59.969 VM: VM R8 shutdown.
-Feb 06 04:34:59.971 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 04:35:04.364 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 04:35:04.365 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:35:04.365 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 04:35:04.382 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 04:35:04.382 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 04:39:44.626 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 04:39:44.626 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 04:39:44.797 VM: VM R8 shutdown.
-Feb 06 04:39:44.798 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 04:48:36.802 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 04:48:36.803 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:48:36.804 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 04:48:36.814 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 04:48:36.817 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 06:37:38.330 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 06:37:38.332 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 06:37:38.476 VM: VM R8 shutdown.
-Feb 06 06:37:38.478 HYPERVISOR: exec_cmd: vm extract_config R8 
-Feb 06 06:57:57.407 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
-Feb 06 06:57:57.408 HYPERVISOR: exec_cmd: vm set_ghost_file R8 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 06:57:57.408 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 06:57:57.424 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg configs\i8_private-config.cfg 
-Feb 06 06:57:57.424 HYPERVISOR: exec_cmd: vm start R8 
-Feb 06 07:05:22.781 HYPERVISOR: exec_cmd: vm get_status R8 
-Feb 06 07:05:22.781 HYPERVISOR: exec_cmd: vm stop R8 
-Feb 06 07:05:22.983 VM: VM R8 shutdown.
-Feb 06 07:05:22.985 HYPERVISOR: exec_cmd: vm extract_config R8 
+Feb 06 11:22:45.194 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 06 11:22:45.194 HYPERVISOR: Started on IP = localhost, TCP port = 61703.
+Feb 06 11:22:45.679 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 06 11:22:45.679 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips 
+Feb 06 11:22:45.679 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips
+Feb 06 11:22:45.679 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\a2960629-2a83-4559-8478-5ee6a403e87a 
+Feb 06 11:22:45.692 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\a2960629-2a83-4559-8478-5ee6a403e87a
+Feb 06 11:22:45.692 HYPERVISOR: exec_cmd: vm create R8 8 c7200 
+Feb 06 11:22:45.697 VM: VM R8 created.
+Feb 06 11:22:45.698 HYPERVISOR: exec_cmd: vm set_con_tcp_port R8 5003 
+Feb 06 11:22:45.698 HYPERVISOR: exec_cmd: c7200 get_mac_addr R8 
+Feb 06 11:22:45.698 HYPERVISOR: exec_cmd: vm get_status R8 
+Feb 06 11:22:45.698 HYPERVISOR: exec_cmd: vm slot_add_binding R8 0 0 C7200-IO-FE 
+Feb 06 11:22:45.700 HYPERVISOR: exec_cmd: vm set_disk0 R8 0 
+Feb 06 11:22:45.702 HYPERVISOR: exec_cmd: vm set_exec_area R8 64 
+Feb 06 11:22:45.703 HYPERVISOR: exec_cmd: vm set_ios R8 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Feb 06 11:22:45.703 HYPERVISOR: exec_cmd: c7200 set_mac_addr R8 ca08.7c7c.0000 
+Feb 06 11:22:45.705 HYPERVISOR: exec_cmd: vm set_nvram R8 512 
+Feb 06 11:22:45.705 HYPERVISOR: exec_cmd: vm set_ram R8 512 
+Feb 06 11:22:45.705 HYPERVISOR: exec_cmd: vm get_status R8 
+Feb 06 11:22:45.707 HYPERVISOR: exec_cmd: vm slot_add_binding R8 1 0 PA-GE 
+Feb 06 11:22:45.708 HYPERVISOR: exec_cmd: vm get_status R8 
+Feb 06 11:22:45.708 HYPERVISOR: exec_cmd: vm slot_add_binding R8 2 0 PA-GE 
+Feb 06 11:22:45.708 HYPERVISOR: exec_cmd: vm get_status R8 
+Feb 06 11:22:45.708 HYPERVISOR: exec_cmd: vm slot_add_binding R8 3 0 PA-GE 
+Feb 06 11:22:45.708 HYPERVISOR: exec_cmd: vm get_status R8 
+Feb 06 11:22:45.708 HYPERVISOR: exec_cmd: vm slot_add_binding R8 4 0 PA-GE 

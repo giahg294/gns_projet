@@ -40,7 +40,7 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"463.6190476190476\" height=\"442.8571428571429\"><ellipse cx=\"231\" rx=\"232\" cy=\"221\" ry=\"222\" fill=\"#f7aaac\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
-                "x": -207,
+                "x": -205,
                 "y": -413,
                 "z": -1
             },
@@ -49,8 +49,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"372.6190476190476\" height=\"386.6666666666667\"><ellipse cx=\"186\" rx=\"187\" cy=\"193\" ry=\"194\" fill=\"#d0d0d0\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
-                "x": -731,
-                "y": -45,
+                "x": -732,
+                "y": -30,
                 "z": -1
             },
             {
@@ -67,8 +67,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"69\" height=\"50\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">AS 112\npeer 1</text></svg>",
-                "x": -584,
-                "y": -40,
+                "x": -585,
+                "y": -25,
                 "z": 2
             },
             {
@@ -730,8 +730,8 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "b84332a4-d9db-4490-880b-d7e031d28394",
                 "width": 66,
-                "x": -131,
-                "y": -318,
+                "x": -139,
+                "y": -312,
                 "z": 1
             },
             {
@@ -799,7 +799,7 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "b84332a4-d9db-4490-880b-d7e031d28394",
                 "width": 66,
-                "x": 114,
+                "x": 115,
                 "y": -112,
                 "z": 1
             },
@@ -1420,7 +1420,7 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "38892c45-9782-448f-a521-7e2ddf0b3d28",
                 "width": 66,
-                "x": 470,
+                "x": 472,
                 "y": 56,
                 "z": 1
             },

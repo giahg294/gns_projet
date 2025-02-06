@@ -28,4 +28,3 @@ def drag_file(i, fichiers_config):
     target_file = destination + target_directory[i] + "/" + fichiers_config[i]
     shutil.move(file,target_file)
     print(f"le bot s'est occupé {fichiers_config[i]} avec succès.")
-

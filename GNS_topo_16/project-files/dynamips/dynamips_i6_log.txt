@@ -1,151 +1,27 @@
-Feb 05 02:26:06.632 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Feb 05 02:26:06.637 HYPERVISOR: Started on IP = localhost, TCP port = 50772.
-Feb 05 02:26:07.137 HYPERVISOR: exec_cmd: hypervisor version 
-Feb 05 02:26:07.137 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips 
-Feb 05 02:26:07.137 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips
-Feb 05 02:26:07.137 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\e5e90cab-a67f-464a-a374-671a0cc7baa6 
-Feb 05 02:26:07.142 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\e5e90cab-a67f-464a-a374-671a0cc7baa6
-Feb 05 02:26:07.142 HYPERVISOR: exec_cmd: vm create R11 11 c7200 
-Feb 05 02:26:07.142 VM: VM R11 created.
-Feb 05 02:26:07.142 HYPERVISOR: exec_cmd: vm set_con_tcp_port R11 5005 
-Feb 05 02:26:07.142 HYPERVISOR: exec_cmd: c7200 get_mac_addr R11 
-Feb 05 02:26:07.142 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:07.142 HYPERVISOR: exec_cmd: vm slot_add_binding R11 0 0 C7200-IO-FE 
-Feb 05 02:26:07.142 HYPERVISOR: exec_cmd: vm set_disk0 R11 0 
-Feb 05 02:26:07.142 HYPERVISOR: exec_cmd: vm set_exec_area R11 64 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: c7200 set_mac_addr R11 ca0b.841c.0000 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm set_nvram R11 512 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm set_ram R11 512 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm slot_add_binding R11 1 0 PA-GE 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm slot_add_binding R11 2 0 PA-GE 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm slot_add_binding R11 3 0 PA-GE 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:07.152 HYPERVISOR: exec_cmd: vm slot_add_binding R11 4 0 PA-GE 
-Feb 05 02:26:13.472 HYPERVISOR: exec_cmd: nio create_udp udp-9514371f-7229-4246-ae0b-ce0424fac9dc 10010 127.0.0.1 10011 
-Feb 05 02:26:13.723 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 1 0 udp-9514371f-7229-4246-ae0b-ce0424fac9dc 
-Feb 05 02:26:13.723 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:13.763 HYPERVISOR: exec_cmd: nio create_udp udp-789e811b-bdbc-45ee-87fc-81ae4f4c1929 10014 127.0.0.1 10015 
-Feb 05 02:26:13.763 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 0 0 udp-789e811b-bdbc-45ee-87fc-81ae4f4c1929 
-Feb 05 02:26:13.763 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:58.195 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 05 02:26:58.205 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 02:26:58.205 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 02:26:58.215 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 05 02:26:58.215 HYPERVISOR: exec_cmd: vm start R11 
-Feb 05 02:27:28.506 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 05 03:54:48.265 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 03:54:48.265 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 05 03:54:48.380 VM: VM R11 shutdown.
-Feb 05 03:54:48.382 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 05 03:54:49.509 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 05 03:54:49.509 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 03:54:49.509 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 03:54:49.539 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 05 03:54:49.539 HYPERVISOR: exec_cmd: vm start R11 
-Feb 05 03:59:20.413 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 03:59:20.413 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 05 03:59:20.525 VM: VM R11 shutdown.
-Feb 05 03:59:20.525 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 05 03:59:49.937 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 05 03:59:49.937 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 05 03:59:49.937 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 03:59:49.946 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 05 03:59:49.946 HYPERVISOR: exec_cmd: vm start R11 
-Feb 05 04:41:58.214 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 05 04:41:58.216 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 05 04:41:58.351 VM: VM R11 shutdown.
-Feb 05 04:41:58.353 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 05 16:44:53.450 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:56:40.670 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 01:59:22.680 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 02:01:00.450 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 02:01:00.450 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R11 1 0 
-Feb 06 02:01:00.450 HYPERVISOR: exec_cmd: nio delete udp-9514371f-7229-4246-ae0b-ce0424fac9dc 
-Feb 06 02:01:02.678 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 02:01:02.678 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R11 0 0 
-Feb 06 02:01:02.678 HYPERVISOR: exec_cmd: nio delete udp-789e811b-bdbc-45ee-87fc-81ae4f4c1929 
-Feb 06 02:01:14.026 HYPERVISOR: exec_cmd: nio create_udp udp-11bfa8ba-b8fc-4a3f-911d-5f95b300296b 10010 127.0.0.1 10011 
-Feb 06 02:01:14.026 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 0 0 udp-11bfa8ba-b8fc-4a3f-911d-5f95b300296b 
-Feb 06 02:01:14.026 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 02:01:18.116 HYPERVISOR: exec_cmd: nio create_udp udp-d09048bf-5fb9-4cea-bbfb-d5247440fe49 10014 127.0.0.1 10015 
-Feb 06 02:01:18.116 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 1 0 udp-d09048bf-5fb9-4cea-bbfb-d5247440fe49 
-Feb 06 02:01:18.116 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 02:49:40.672 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 02:49:40.673 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 03:18:36.586 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 03:18:36.587 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:18:36.587 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 03:18:36.598 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 03:18:36.599 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 03:19:24.097 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Feb 06 03:22:55.740 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 03:22:55.740 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 03:22:55.844 VM: VM R11 shutdown.
-Feb 06 03:22:55.845 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 03:36:52.272 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 03:36:52.273 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:36:52.273 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 03:36:52.284 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 03:36:52.285 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 03:43:06.029 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 03:43:06.029 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 03:43:06.131 VM: VM R11 shutdown.
-Feb 06 03:43:06.132 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 03:46:42.149 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 03:46:42.150 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 03:46:42.150 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 03:46:42.162 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 03:46:42.162 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 03:50:49.495 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 03:50:49.495 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 03:50:49.634 VM: VM R11 shutdown.
-Feb 06 03:50:49.636 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 04:26:14.721 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 04:26:14.733 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:26:14.733 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 04:26:14.748 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 04:26:14.749 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 04:34:44.381 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 04:34:44.381 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 04:34:44.499 VM: VM R11 shutdown.
-Feb 06 04:34:44.501 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 04:34:45.302 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 04:34:45.315 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:34:45.316 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 04:34:45.331 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 04:34:45.331 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 04:34:59.849 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 04:34:59.850 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 04:35:00.013 VM: VM R11 shutdown.
-Feb 06 04:35:00.014 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 04:35:04.433 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 04:35:04.444 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:35:04.444 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 04:35:04.455 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 04:35:04.456 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 04:39:44.662 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 04:39:44.663 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 04:39:44.829 VM: VM R11 shutdown.
-Feb 06 04:39:44.830 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 04:48:36.831 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 04:48:36.832 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 04:48:36.832 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 04:48:36.843 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 04:48:36.843 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 06:37:38.386 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 06:37:38.386 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 06:37:38.490 VM: VM R11 shutdown.
-Feb 06 06:37:38.494 HYPERVISOR: exec_cmd: vm extract_config R11 
-Feb 06 06:57:57.448 HYPERVISOR: exec_cmd: vm set_ghost_status R11 2 
-Feb 06 06:57:57.450 HYPERVISOR: exec_cmd: vm set_ghost_file R11 C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Feb 06 06:57:57.450 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 06:57:57.454 HYPERVISOR: exec_cmd: vm set_config R11 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
-Feb 06 06:57:57.454 HYPERVISOR: exec_cmd: vm start R11 
-Feb 06 07:05:22.790 HYPERVISOR: exec_cmd: vm get_status R11 
-Feb 06 07:05:22.790 HYPERVISOR: exec_cmd: vm stop R11 
-Feb 06 07:05:22.961 VM: VM R11 shutdown.
-Feb 06 07:05:22.963 HYPERVISOR: exec_cmd: vm extract_config R11 
+Feb 06 11:22:46.396 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 06 11:22:46.396 HYPERVISOR: Started on IP = localhost, TCP port = 61709.
+Feb 06 11:22:46.890 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 06 11:22:46.890 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips 
+Feb 06 11:22:46.890 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips
+Feb 06 11:22:46.890 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\e5e90cab-a67f-464a-a374-671a0cc7baa6 
+Feb 06 11:22:46.890 GENERAL: working_dir=C:\Users\giaho\Documents\3A\GNS\GNS_code\gns_projet\GNS_topo_16\project-files\dynamips\e5e90cab-a67f-464a-a374-671a0cc7baa6
+Feb 06 11:22:46.890 HYPERVISOR: exec_cmd: vm create R11 11 c7200 
+Feb 06 11:22:46.894 VM: VM R11 created.
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: vm set_con_tcp_port R11 5005 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: c7200 get_mac_addr R11 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: vm get_status R11 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: vm slot_add_binding R11 0 0 C7200-IO-FE 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: vm set_disk0 R11 0 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: vm set_exec_area R11 64 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/giaho/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: c7200 set_mac_addr R11 ca0b.841c.0000 
+Feb 06 11:22:46.895 HYPERVISOR: exec_cmd: vm set_nvram R11 512 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm set_ram R11 512 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm get_status R11 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm slot_add_binding R11 1 0 PA-GE 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm get_status R11 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm slot_add_binding R11 2 0 PA-GE 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm get_status R11 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm slot_add_binding R11 3 0 PA-GE 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm get_status R11 
+Feb 06 11:22:46.903 HYPERVISOR: exec_cmd: vm slot_add_binding R11 4 0 PA-GE 
